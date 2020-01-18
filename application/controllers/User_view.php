@@ -13,7 +13,7 @@ class User_view extends CI_Controller {
 
 	public function index()
 	{
-
+        echo json_encode($this->session->userdata('user_data'));
 		
     }
     public function login()

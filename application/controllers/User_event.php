@@ -33,7 +33,7 @@ class User_event extends CI_Controller {
 						"updated_at" => date("Y-m-d H:i:s")
 					);
 
-					$this->DataModel->update('id_user', $cek->id_user, 'user', $datas);
+					$this->DataModel->update('id', $cek->id, 'user', $datas);
 
 					$user = array(
 						"id" => $cek->id,
@@ -42,8 +42,25 @@ class User_event extends CI_Controller {
 						"email" => $cek->email,
 						"status" => $cek->status,
 					);
-					$this->session->set_userdata('user_data', $user);
-					redirect("User_view");
+					if($cek->status == "TIDAK AKTIF"){
+						$this->session->set_flashdata(
+							'pesan',
+							'<div class="row purchace-popup">
+							<div class="col-12 stretch-card grid-margin">
+							  <div class="card card-secondary">
+								<span class="card-body d-lg-flex align-items-center">
+								  <p class="mb-lg-0">Akun anda belum aktif</p>
+								</span>
+							  </div>
+							</div>
+						  </div>'
+						);
+						redirect("User_view/login");
+					}else{
+						$this->session->set_userdata('user_data', $user);
+						redirect("User_view");
+					}
+					
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
@@ -51,10 +68,7 @@ class User_event extends CI_Controller {
 						<div class="col-12 stretch-card grid-margin">
 						  <div class="card card-secondary">
 							<span class="card-body d-lg-flex align-items-center">
-							  <p class="mb-lg-0">Username sudah terpakai.</p>
-							  <button class="close popup-dismiss ml-2">
-								<span aria-hidden="true">&times;</span>
-							  </button>
+							  <p class="mb-lg-0">Username atau password salah.</p>
 							</span>
 						  </div>
 						</div>
@@ -69,10 +83,7 @@ class User_event extends CI_Controller {
 					<div class="col-12 stretch-card grid-margin">
 					  <div class="card card-secondary">
 						<span class="card-body d-lg-flex align-items-center">
-						  <p class="mb-lg-0">Username sudah terpakai.</p>
-						  <button class="close popup-dismiss ml-2">
-							<span aria-hidden="true">&times;</span>
-						  </button>
+						  <p class="mb-lg-0">Akses tidak ada.</p>
 						</span>
 					  </div>
 					</div>
@@ -133,9 +144,6 @@ class User_event extends CI_Controller {
 						  <div class="card card-secondary">
 							<span class="card-body d-lg-flex align-items-center">
 							  <p class="mb-lg-0">Username sudah terpakai.</p>
-							  <button class="close popup-dismiss ml-2">
-								<span aria-hidden="true">&times;</span>
-							  </button>
 							</span>
 						  </div>
 						</div>
@@ -150,9 +158,6 @@ class User_event extends CI_Controller {
 						  <div class="card card-secondary">
 							<span class="card-body d-lg-flex align-items-center">
 							  <p class="mb-lg-0">Email yang anda masukkan sudah terpakai.</p>
-							  <button class="close popup-dismiss ml-2">
-								<span aria-hidden="true">&times;</span>
-							  </button>
 							</span>
 						  </div>
 						</div>
@@ -182,9 +187,6 @@ class User_event extends CI_Controller {
 							  <div class="card card-secondary">
 								<span class="card-body d-lg-flex align-items-center">
 								  <p class="mb-lg-0">Silahkan masuk.</p>
-								  <button class="close popup-dismiss ml-2">
-									<span aria-hidden="true">&times;</span>
-								  </button>
 								</span>
 							  </div>
 							</div>
@@ -200,9 +202,6 @@ class User_event extends CI_Controller {
 							  <div class="card card-secondary">
 								<span class="card-body d-lg-flex align-items-center">
 								  <p class="mb-lg-0">Gagal mendaftar.</p>
-								  <button class="close popup-dismiss ml-2">
-									<span aria-hidden="true">&times;</span>
-								  </button>
 								</span>
 							  </div>
 							</div>
@@ -218,9 +217,6 @@ class User_event extends CI_Controller {
 						  <div class="card card-secondary">
 							<span class="card-body d-lg-flex align-items-center">
 							  <p class="mb-lg-0">Password tidak sama.</p>
-							  <button class="close popup-dismiss ml-2">
-								<span aria-hidden="true">&times;</span>
-							  </button>
 							</span>
 						  </div>
 						</div>

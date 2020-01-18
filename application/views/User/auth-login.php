@@ -13,10 +13,10 @@
                 <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
                 <form class="pt-3" action="<?= base_url()?>index.php/User_event/login" method="POST">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                    <input type="text" class="form-control form-control-lg" name="username" id="exampleInputEmail1" placeholder="Username">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="mt-3">
                     <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="MASUK">
