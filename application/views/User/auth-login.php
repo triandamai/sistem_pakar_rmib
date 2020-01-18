@@ -1,42 +1,24 @@
-
-    <div class="container-scroller">
-      <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center auth">
-          <div class="row flex-grow">
-            <div class="col-lg-4 mx-auto">
-            <?= $this->session->flashdata('pesan'); ?>
-              <div class="auth-form-light text-left p-5">
-                <div class="brand-logo">
-                  <img src="<?=base_url()?>assets/images/logo.svg">
-                </div>
-                <h4>Halo! yuk mulai.</h4>
-                <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
-                <form class="pt-3" action="<?= base_url()?>index.php/User_event/login" method="POST">
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="username" id="exampleInputEmail1" placeholder="Username">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="mt-3">
-                    <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="MASUK">
-                  </div>
-                  <!-- <div class="my-2 d-flex justify-content-between align-items-center">
-                    <div class="form-check">
-                      <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input"> Keep me signed in </label>
+<div class="splash-container">
+<?= $this->session->flashdata('pesan'); ?>
+        <div class="card ">
+        
+            <div class="card-header text-center"><a><img class="logo-img" src="<?= base_url()?>assets/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-body">
+                <form action="<?= base_url()?>index.php/User_event/login" method="POST">
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="username" id="username" type="text" placeholder="Username" autocomplete="off" required>
                     </div>
-                    <a href="#" class="auth-link text-black">Forgot password?</a>
-                  </div> -->
-                  
-                  <div class="text-center mt-4 font-weight-light"> Belum punya akun? <a href="<?=base_url()?>index.php/User_view/daftar" class="text-primary">Buat akun</a>
-                  </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Password" required>
+                    </div>
+                    <input type="hidden" value="kirim" name="kirirm" >
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
                 </form>
-              </div>
             </div>
-          </div>
+            <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="<?= base_url()?>index.php/User_view/daftar" class="footer-link">Buat Akun</a></div>
+            </div>
         </div>
-        <!-- content-wrapper ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
     </div>
+  

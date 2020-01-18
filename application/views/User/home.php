@@ -1,281 +1,84 @@
-
-          <div class="content-wrapper">
-            <div class="row purchace-popup">
-              <div class="col-12 stretch-card grid-margin">
-                <div class="card card-secondary">
-                  <span class="card-body d-lg-flex align-items-center">
-                    <p class="mb-lg-0">Like what you see? Check out our premium version for more.</p>
-                    <a href="https://github.com/BootstrapDash/StellarAdmin-Free-Bootstrap-Admin-Template" target="_blank" class="btn ml-lg-auto download-button btn-success btn-sm my-1 my-sm-0">Download Free Version</a>
-                    <a href="https://www.bootstrapdash.com/product/stellar-admin/" target="_blank" class="btn btn-warning purchase-button btn-sm ml-sm-2 my-1 my-sm-0">Upgrade To Pro</a>
-                    <button class="close popup-dismiss ml-2">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Sessions by channel</h4>
-                    <div class="aligner-wrapper">
-                      <canvas id="sessionsDoughnutChart" height="210"></canvas>
-                      <div class="wrapper d-flex flex-column justify-content-center absolute absolute-center">
-                        <h2 class="text-center mb-0 font-weight-bold">8.234</h2>
-                        <small class="d-block text-center text-muted  font-weight-semibold mb-0">Total Leads</small>
-                      </div>
-                    </div>
-                    <div class="wrapper mt-4 d-flex flex-wrap align-items-cente">
-                      <div class="d-flex">
-                        <span class="square-indicator bg-danger ml-2"></span>
-                        <p class="mb-0 ml-2">Assigned</p>
-                      </div>
-                      <div class="d-flex">
-                        <span class="square-indicator bg-success ml-2"></span>
-                        <p class="mb-0 ml-2">Not Assigned</p>
-                      </div>
-                      <div class="d-flex">
-                        <span class="square-indicator bg-warning ml-2"></span>
-                        <p class="mb-0 ml-2">Reassigned</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-8 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body performane-indicator-card">
-                    <div class="d-sm-flex">
-                      <h4 class="card-title flex-shrink-1">Performance Indicator</h4>
-                      <p class="m-sm-0 ml-sm-auto flex-shrink-0">
-                        <span class="data-time-range ml-0">7d</span>
-                        <span class="data-time-range active">2w</span>
-                        <span class="data-time-range">1m</span>
-                        <span class="data-time-range">3m</span>
-                        <span class="data-time-range">6m</span>
-                      </p>
-                    </div>
-                    <div class="d-sm-flex flex-wrap">
-                      <div class="d-flex align-items-center">
-                        <span class="dot-indicator bg-primary ml-2"></span>
-                        <p class="mb-0 ml-2 text-muted font-weight-semibold">Complaints (2098)</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="dot-indicator bg-info ml-2"></span>
-                        <p class="mb-0 ml-2 text-muted font-weight-semibold"> Task Done (1123)</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="dot-indicator bg-danger ml-2"></span>
-                        <p class="mb-0 ml-2 text-muted font-weight-semibold">Attends (876)</p>
-                      </div>
-                    </div>
-                    <div id="performance-indicator-chart" class="ct-chart mt-4"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Quick Action Toolbar Starts-->
-            <div class="row quick-action-toolbar">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-header d-block d-md-flex">
-                    <h5 class="mb-0">Quick Actions</h5>
-                    <p class="ml-auto mb-0">How are your active users trending overtime?<i class="icon-bulb"></i></p>
-                  </div>
-                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Add Client</button>
-                    </div>
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> Create Quote</button>
-                    </div>
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> Enter Payment</button>
-                    </div>
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i>Create Invoice</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Quick Action Toolbar Ends-->
-            <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="d-sm-flex align-items-baseline report-summary-header">
-                          <h5 class="font-weight-semibold">Report Summary</h5> <span class="ml-auto">Updated Report</span> <button class="btn btn-icons border-0 p-2"><i class="icon-refresh"></i></button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row report-inner-cards-wrapper">
-                      <div class=" col-md -6 col-xl report-inner-card">
-                        <div class="inner-card-text">
-                          <span class="report-title">EXPENSE</span>
-                          <h4>$32123</h4>
-                          <span class="report-count"> 2 Reports</span>
-                        </div>
-                        <div class="inner-card-icon bg-success">
-                          <i class="icon-rocket"></i>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl report-inner-card">
-                        <div class="inner-card-text">
-                          <span class="report-title">PURCHASE</span>
-                          <h4>95,458</h4>
-                          <span class="report-count"> 3 Reports</span>
-                        </div>
-                        <div class="inner-card-icon bg-danger">
-                          <i class="icon-briefcase"></i>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl report-inner-card">
-                        <div class="inner-card-text">
-                          <span class="report-title">QUANTITY</span>
-                          <h4>2650</h4>
-                          <span class="report-count"> 5 Reports</span>
-                        </div>
-                        <div class="inner-card-icon bg-warning">
-                          <i class="icon-globe-alt"></i>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl report-inner-card">
-                        <div class="inner-card-text">
-                          <span class="report-title">RETURN</span>
-                          <h4>25,542</h4>
-                          <span class="report-count"> 9 Reports</span>
-                        </div>
-                        <div class="inner-card-icon bg-primary">
-                          <i class="icon-diamond"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row income-expense-summary-chart-text">
-                      <div class="col-xl-4">
-                        <h5>Income And Expenses Summary</h5>
-                        <p class="small text-muted">A comparison of people who mark themselves of their ineterest from the date range given above. Learn more.</p>
-                      </div>
-                      <div class=" col-md-3 col-xl-2">
-                        <p class="income-expense-summary-chart-legend"> <span style="border-color: #6469df"></span> Total Income </p>
-                        <h3>$ 1,766.00</h3>
-                      </div>
-                      <div class="col-md-3 col-xl-2">
-                        <p class="income-expense-summary-chart-legend"> <span style="border-color: #37ca32"></span> Total Expense </p>
-                        <h3>$ 5,698.30</h3>
-                      </div>
-                      <div class="col-md-6 col-xl-4 d-flex align-items-center">
-                        <div class="input-group" id="income-expense-summary-chart-daterange">
-                          <div class="inpu-group-prepend input-group-text"><i class="icon-calendar"></i></div>
-                          <input type="text" class="form-control">
-                          <div class="input-group-prepend input-group-text"><i class="icon-arrow-down"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row income-expense-summary-chart mt-3">
-                      <div class="col-md-12">
-                        <div class="ct-chart" id="income-expense-summary-chart"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-sm-flex align-items-center mb-4">
-                      <h4 class="card-title mb-sm-0">Products Inventory</h4>
-                      <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>
-                    </div>
-                    <div class="table-responsive border rounded p-1">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th class="font-weight-bold">Store ID</th>
-                            <th class="font-weight-bold">Amount</th>
-                            <th class="font-weight-bold">Gateway</th>
-                            <th class="font-weight-bold">Created at</th>
-                            <th class="font-weight-bold">Paid at</th>
-                            <th class="font-weight-bold">Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face1.jpg" alt="profile image"> Katie Holmes </td>
-                            <td>$3621</td>
-                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>04 Jun 2019</td>
-                            <td>18 Jul 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face2.jpg" alt="profile image"> Minnie Copeland </td>
-                            <td>$6245</td>
-                            <td><img src="images/dashboard/paypal.png" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
-                            <td>25 Sep 2019</td>
-                            <td>07 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-danger p-2">Pending</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face3.jpg" alt="profile image"> Rodney Sims </td>
-                            <td>$9265</td>
-                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>12 dec 2019</td>
-                            <td>26 Aug 2019</td>
-                            <td>
-                              <div class="badge badge-warning p-2">Failed</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face4.jpg" alt="profile image"> Carolyn Barker </td>
-                            <td>$2263</td>
-                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
-                            <td>30 Sep 2019</td>
-                            <td>20 Oct 2019</td>
-                            <td>
-                              <div class="badge badge-success p-2">Paid</div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="d-flex mt-4 flex-wrap">
-                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
-                      <nav class="ml-auto">
-                        <ul class="pagination separated pagination-info">
-                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
-                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                          <li class="page-item"><a href="#" class="page-link">2</a></li>
-                          <li class="page-item"><a href="#" class="page-link">3</a></li>
-                          <li class="page-item"><a href="#" class="page-link">4</a></li>
-                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-         
+<div class="dashboard-influence">
+	            <div class="container-fluid dashboard-content">
+	                <!-- ============================================================== -->
+	                <!-- pageheader  -->
+	                <!-- ============================================================== -->
+	                <div class="row">
+	                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+	                        <div class="page-header">
+	                            <h3 class="mb-2">Infulencer Dashboard Template </h3>
+	                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+	                            <div class="page-breadcrumb">
+	                                <nav aria-label="breadcrumb">
+	                                    <ol class="breadcrumb">
+	                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+	                                        <li class="breadcrumb-item active" aria-current="page">Influencer Dashboard Template</li>
+	                                    </ol>
+	                                </nav>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <!-- ============================================================== -->
+	                <!-- end pageheader  -->
+	                <!-- ============================================================== -->
+	                <!-- ============================================================== -->
+	                <!-- content  -->
+	                <!-- ============================================================== -->
+	                <!-- ============================================================== -->
+	                <!-- influencer profile  -->
+	                <!-- ============================================================== -->
+	                <div class="row">
+	                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+	                        <div class="card influencer-profile-data">
+	                            <div class="card-body">
+	                                <div class="row">
+	                                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
+	                                        <div class="text-center">
+	                                            <img src="assets/images/avatar-1.jpg" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 col-12">
+	                                            <div class="user-avatar-info">
+	                                                <div class="m-b-20">
+	                                                    <div class="user-avatar-name">
+	                                                        <h2 class="mb-1">Henry Barbara</h2>
+	                                                    </div>
+	                                                    <div class="rating-star  d-inline-block">
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <p class="d-inline-block text-dark">14 Reviews </p>
+	                                                    </div>
+	                                                </div>
+	                                                <!--  <div class="float-right"><a href="#" class="user-avatar-email text-secondary">www.henrybarbara.com</a></div> -->
+	                                                <div class="user-avatar-address">
+	                                                    <p class="border-bottom pb-3">
+	                                                        <span class="d-xl-inline-block d-block mb-2"><i class="fa fa-map-marker-alt mr-2 text-primary "></i>4045 Denver AvenueLos Angeles, CA 90017</span>
+	                                                        <span class="mb-2 ml-xl-4 d-xl-inline-block d-block">Joined date: 23 June, 2018  </span>
+	                                                        <span class=" mb-2 d-xl-inline-block d-block ml-xl-4">Male 
+	                                                                </span>
+	                                                        <span class=" mb-2 d-xl-inline-block d-block ml-xl-4">29 Year Old </span>
+	                                                    </p>
+	                                                    <div class="mt-3">
+	                                                        <a href="#" class="badge badge-light mr-1">Fitness</a> <a href="#" class="badge badge-light mr-1">Life Style</a> <a href="#" class="badge badge-light">Gym</a>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="border-top user-social-box">
+	                                    <div class="user-social-media d-xl-inline-block"><span class="mr-2 twitter-color"> <i class="fab fa-twitter-square"></i></span><span>13,291</span></div>
+	                                    <div class="user-social-media d-xl-inline-block"><span class="mr-2  pinterest-color"> <i class="fab fa-pinterest-square"></i></span><span>84,019</span></div>
+	                                    <div class="user-social-media d-xl-inline-block"><span class="mr-2 instagram-color"> <i class="fab fa-instagram"></i></span><span>12,300</span></div>
+	                                    <div class="user-social-media d-xl-inline-block"><span class="mr-2  facebook-color"> <i class="fab fa-facebook-square "></i></span><span>92,920</span></div>
+	                                    <div class="user-social-media d-xl-inline-block "><span class="mr-2 medium-color"> <i class="fab fa-medium"></i></span><span>291</span></div>
+	                                    <div class="user-social-media d-xl-inline-block"><span class="mr-2 youtube-color"> <i class="fab fa-youtube"></i></span><span>1291</span></div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>

@@ -1,55 +1,44 @@
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="<?=base_url()?>assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src=".<?=base_url()?>assets/js/off-canvas.js"></script>
-    <script src=".<?=base_url()?>assets/js/misc.js"></script>
-    <!-- endinject -->
-
-    <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript">
-		$(document).ready(function(){
-			$('#tombol').click(function(){
-				$('#modal-kotak , #bg').fadeIn("slow");
-			});
-			$('#tombol-tutup').click(function(){
-				$('#modal-kotak , #bg').fadeOut("slow");
-			});
-		});
-	</script>
-  <script type="text/javascript">
+ <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="<?= base_url()?>assets/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="<?= base_url()?>assets/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="<?= base_url()?>assets/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="<?= base_url()?>assets/assets/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="<?= base_url()?>assets/assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="<?= base_url()?>assets/assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="<?= base_url()?>assets/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="<?= base_url()?>assets/assets/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="<?= base_url()?>assets/assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="<?= base_url()?>assets/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="<?= base_url()?>assets/assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="<?= base_url()?>assets/assets/libs/js/dashboard-ecommerce.js"></script>
 
 
-    $(document).on("click", "#ubahPenyakit", function() {
-      $('input[name="kodepenyakit"]').val($(this).data('id'));
-      $('input[name="id"]').val($(this).data('id'));
-      $('input[name="namapenyakit"]').val($(this).data('nama'));
-      $('textarea[name="deskripsipenyakit"]').val($(this).data('deskripsi'));
-      $('textarea[name="solusipenyakit"]').val($(this).data('solusi'));
-    });
-
-    $(document).on("click", "#hapusGejala", function() {
-
-      $('#modalTitle').text("Apakah kamu yakin menghapus Gejala "+$(this).data('nama')+" ?");
-      $('input[name="kodegejala"]').val($(this).data('id'));
-    });
-
-
-    $(document).on("click", "#btnDetailArtikel", function() {
-      $('input[name="kodepenyakit"]').val($(this).data('id'));
-      $('input[name="id"]').val($(this).data('id'));
-      $('input[name="judul"]').val($(this).data('judul'));
-   
-      $("#dataa").ckeditor();
-      $("#dataa").val("gh");
-    
-    });
- </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url()?>assets/assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url()?>assets/assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?= base_url()?>assets/assets/vendor/datatables/js/data-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 </body>
+ 
 </html>
+ 

@@ -88,7 +88,7 @@ class User_view extends CI_Controller {
             $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
             $this->load->view('header', $data);
                 $this->load->view('user/nav-top', $data);
-                $this->load->view('user/data-analisa', $data);
+                $this->load->view('user/history-analisa', $data);
                 $this->load->view('user/nav-bottom', $data);
             $this->load->view('footer', $data);
         }else{

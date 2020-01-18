@@ -28,7 +28,7 @@ class User_event extends CI_Controller {
 
 			if ($cek != null) {
 				if($this->bcrypt->check_password($password,$cek->password)){
-				// if ($cek->password == $password) {
+			
 					$datas = array(
 						"updated_at" => date("Y-m-d H:i:s")
 					);
@@ -46,15 +46,9 @@ class User_event extends CI_Controller {
 					if($cek->status == "TIDAK AKTIF"){
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="row purchace-popup">
-							<div class="col-12 stretch-card grid-margin">
-							  <div class="card card-secondary">
-								<span class="card-body d-lg-flex align-items-center">
-								  <p class="mb-lg-0">Akun anda belum aktif</p>
-								</span>
-							  </div>
-							</div>
-						  </div>'
+							'<div class="alert alert-warning" role="alert">
+								Akun kamu belum aktif!
+							</div>'
 						);
 						redirect("User_view/login");
 					}else{
@@ -65,41 +59,30 @@ class User_event extends CI_Controller {
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="row purchace-popup">
-						<div class="col-12 stretch-card grid-margin">
-						  <div class="card card-secondary">
-							<span class="card-body d-lg-flex align-items-center">
-							  <p class="mb-lg-0">Username atau password salah.</p>
-							</span>
-						  </div>
-						</div>
-					  </div>'
+						'<div class="alert alert-danger" role="alert">
+						Akun tidak ditemukan!
+						</div>'
 					);
 					redirect("User_view/login");
 				}
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
-					'<div class="row purchace-popup">
-					<div class="col-12 stretch-card grid-margin">
-					  <div class="card card-secondary">
-						<span class="card-body d-lg-flex align-items-center">
-						  <p class="mb-lg-0">Akses tidak ada.</p>
-						</span>
-					  </div>
-					</div>
-				  </div>'
+					'<div class="alert alert-primary" role="alert">
+					Akun tidak ada!
+					</div>'
 				);
 				redirect("User_view/login");
 			}
-		} 
-		// else {
-		// 	$this->session->set_flashdata(
-		// 		'login-error',
-		// 		'<div class="alert alert-danger mr-auto">Server Error Coba Lagi</div>'
-		// 	);
-		// 	redirect("user_view/user_login");
-		// }
+		}else {
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-primary" role="alert">
+					Kesalahan server, coba lagi nanti
+				</div>'
+			);
+			redirect("User_view/login");
+		}
 	}
     public function simpan_analisa()
 	{
@@ -138,31 +121,19 @@ class User_event extends CI_Controller {
 			$cek = $this->DataModel->get_whereArr("user", "username = '" . $username . "' or email = '" . $email . "'")->row();
 			if ($cek != null) {
 				if ($cek->username == $username) {
-					$this->session->set_flashdata(
+					$$this->session->set_flashdata(
 						'pesan',
-						'<div class="row purchace-popup">
-						<div class="col-12 stretch-card grid-margin">
-						  <div class="card card-secondary">
-							<span class="card-body d-lg-flex align-items-center">
-							  <p class="mb-lg-0">Username sudah terpakai.</p>
-							</span>
-						  </div>
-						</div>
-					  </div>'
+						'<div class="alert alert-primary" role="alert">
+						This is a primary alert—check it out!
+						</div>'
 					);
 					redirect('User_view/daftar');
 				} else if ($cek->email == $email) {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="row purchace-popup">
-						<div class="col-12 stretch-card grid-margin">
-						  <div class="card card-secondary">
-							<span class="card-body d-lg-flex align-items-center">
-							  <p class="mb-lg-0">Email yang anda masukkan sudah terpakai.</p>
-							</span>
-						  </div>
-						</div>
-					  </div>'
+						'<div class="alert alert-primary" role="alert">
+						This is a primary alert—check it out!
+						</div>'
 					);
 					redirect('User_view/daftar');
 				}
@@ -183,45 +154,27 @@ class User_event extends CI_Controller {
 					if ($register) {
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="row purchace-popup">
-							<div class="col-12 stretch-card grid-margin">
-							  <div class="card card-secondary">
-								<span class="card-body d-lg-flex align-items-center">
-								  <p class="mb-lg-0">Silahkan masuk.</p>
-								</span>
-							  </div>
-							</div>
-						  </div>'
+							'<div class="alert alert-primary" role="alert">
+							This is a primary alert—check it out!
+							</div>'
 						);
 						redirect('User_view/login');
 						//echo $this->session->flashdata('pesan');
 					} else {
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="row purchace-popup">
-							<div class="col-12 stretch-card grid-margin">
-							  <div class="card card-secondary">
-								<span class="card-body d-lg-flex align-items-center">
-								  <p class="mb-lg-0">Gagal mendaftar.</p>
-								</span>
-							  </div>
-							</div>
-						  </div>'
+							'<div class="alert alert-primary" role="alert">
+							This is a primary alert—check it out!
+							</div>'
 						);
 						redirect('User_view/daftar');
 					}
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="row purchace-popup">
-						<div class="col-12 stretch-card grid-margin">
-						  <div class="card card-secondary">
-							<span class="card-body d-lg-flex align-items-center">
-							  <p class="mb-lg-0">Password tidak sama.</p>
-							</span>
-						  </div>
-						</div>
-					  </div>'
+						'<div class="alert alert-primary" role="alert">
+						This is a primary alert—check it out!
+						</div>'
 					);
 					redirect('User_view/daftar');
 				}
