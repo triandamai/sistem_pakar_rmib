@@ -20,6 +20,15 @@ updated_at
 Indikator
 id
 nama
+jenis
+no_urut
+created_at
+updated_at
+
+sub_indikator
+id
+id_indikator
+nama
 tabel
 jenis
 jenis_kelamin
