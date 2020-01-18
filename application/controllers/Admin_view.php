@@ -57,6 +57,14 @@ class Admin_view extends CI_Controller {
             $this->load->view('Admin/nav-bottom', $data);
             $this->load->view('footer', $data);
 		
-	}
+    }
+    function isLoggedIn()
+    {
+        if ($this->session->userdata('admin_data') != null) {
+            return $this->session->userdata['admin_data']['login'];
+        } else {
+            return false;
+        }
+    }
     
 }

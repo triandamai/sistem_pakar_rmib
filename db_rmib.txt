@@ -18,16 +18,17 @@ created_at
 updated_at
 
 Indikator
-id_indikator
+id
 nama
 tabel
 jenis
 jenis_kelamin
+no_urut
 created_at
 updated_at
 
 Hasil
-id_user
+id
 ttl
 jenis_kelamin
 created_at

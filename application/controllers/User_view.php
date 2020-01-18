@@ -44,7 +44,58 @@ class User_view extends CI_Controller {
             $this->load->view('footer', $data);
 		
     }
+    public function isi_data_analisa()
+	{
+        if ($this->isLoggedIn()) {
+            $data['judul'] = "User | Home";
+            $data['nama_section'] = "Home";
+            $data['title_section'] = "Selamat Datang!";
+            $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
+            $this->load->view('header', $data);
+                $this->load->view('user/nav-top', $data);
+                $this->load->view('user/isi-data-analisa', $data);
+                $this->load->view('user/nav-bottom', $data);
+            $this->load->view('footer', $data);
+        }else{
+            redirect('user_view/login');
+        }
+		
+    }
 
+    public function mulai_analisa()
+	{
+        if ($this->isLoggedIn()) {
+            $data['judul'] = "User | Home";
+            $data['nama_section'] = "Home";
+            $data['title_section'] = "Selamat Datang!";
+            $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
+            $this->load->view('header', $data);
+                $this->load->view('user/nav-top', $data);
+                $this->load->view('user/mulai-analisa', $data);
+                $this->load->view('user/nav-bottom', $data);
+            $this->load->view('footer', $data);
+        }else{
+            redirect('user_view/login');
+        }
+		
+    }
+    public function data_history()
+	{
+        if ($this->isLoggedIn()) {
+            $data['judul'] = "User | Home";
+            $data['nama_section'] = "Home";
+            $data['title_section'] = "Selamat Datang!";
+            $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
+            $this->load->view('header', $data);
+                $this->load->view('user/nav-top', $data);
+                $this->load->view('user/data-analisa', $data);
+                $this->load->view('user/nav-bottom', $data);
+            $this->load->view('footer', $data);
+        }else{
+            redirect('user_view/login');
+        }
+		
+    }
     function isLoggedIn()
     {
         if ($this->session->userdata('user_data') != null) {
