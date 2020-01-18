@@ -41,6 +41,7 @@ class User_event extends CI_Controller {
 						"username" => $cek->username,
 						"email" => $cek->email,
 						"status" => $cek->status,
+						"login" => true
 					);
 					if($cek->status == "TIDAK AKTIF"){
 						$this->session->set_flashdata(

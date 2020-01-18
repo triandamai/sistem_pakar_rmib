@@ -13,7 +13,19 @@ class User_view extends CI_Controller {
 
 	public function index()
 	{
-        echo json_encode($this->session->userdata('user_data'));
+        if ($this->isLoggedIn()) {
+            $data['judul'] = "User | Home";
+            $data['nama_section'] = "Home";
+            $data['title_section'] = "Selamat Datang!";
+            $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
+            $this->load->view('header', $data);
+                $this->load->view('user/nav-top', $data);
+                $this->load->view('user/home', $data);
+                $this->load->view('user/nav-bottom', $data);
+            $this->load->view('footer', $data);
+        }else{
+            redirect('user_view/login');
+        }
 		
     }
     public function login()
@@ -31,6 +43,15 @@ class User_view extends CI_Controller {
                 $this->load->view('User/auth-register', $data);
             $this->load->view('footer', $data);
 		
+    }
+
+    function isLoggedIn()
+    {
+        if ($this->session->userdata('user_data') != null) {
+            return $this->session->userdata['user_data']['login'];
+        } else {
+            return false;
+        }
     }
     
 }
