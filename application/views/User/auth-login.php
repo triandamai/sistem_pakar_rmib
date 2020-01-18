@@ -4,13 +4,14 @@
         <div class="content-wrapper d-flex align-items-center auth">
           <div class="row flex-grow">
             <div class="col-lg-4 mx-auto">
+            <?= $this->session->flashdata('pesan'); ?>
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
                   <img src="<?=base_url()?>assets/images/logo.svg">
                 </div>
-                <h4>Hello! let's get started</h4>
-                <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
+                <h4>Halo! yuk mulai.</h4>
+                <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
+                <form class="pt-3" action="<?= base_url()?>index.php/User_event/login" method="POST">
                   <div class="form-group">
                     <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
                   </div>
@@ -20,15 +21,15 @@
                   <div class="mt-3">
                     <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="MASUK">
                   </div>
-                  <div class="my-2 d-flex justify-content-between align-items-center">
+                  <!-- <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">
                       <label class="form-check-label text-muted">
                         <input type="checkbox" class="form-check-input"> Keep me signed in </label>
                     </div>
                     <a href="#" class="auth-link text-black">Forgot password?</a>
-                  </div>
+                  </div> -->
                   
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="<?=base_url()?>index.php/User_view/daftar" class="text-primary">Create</a>
+                  <div class="text-center mt-4 font-weight-light"> Belum punya akun? <a href="<?=base_url()?>index.php/User_view/daftar" class="text-primary">Buat akun</a>
                   </div>
                 </form>
               </div>

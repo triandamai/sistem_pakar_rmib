@@ -9,13 +9,86 @@ class User_event extends CI_Controller {
 		parent::__construct();
 		$this->load->model('DataModel');
 		$this->load->library('bcrypt');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
 	{
 
 		
-    }
+	}
+	public function login()
+	{
+		if ($this->input->post('username')) {
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+
+			$cek = $this->DataModel->getWhere('username', $username);
+			$cek = $this->DataModel->getData('user')->row();
+
+			if ($cek != null) {
+				if($this->bcrypt->check_password($password,$cek->password)){
+				// if ($cek->password == $password) {
+					$datas = array(
+						"updated_at" => date("Y-m-d H:i:s")
+					);
+
+					$this->DataModel->update('id_user', $cek->id_user, 'user', $datas);
+
+					$user = array(
+						"id" => $cek->id,
+						"nama" => $cek->nama,
+						"username" => $cek->username,
+						"email" => $cek->email,
+						"status" => $cek->status,
+					);
+					$this->session->set_userdata('user_data', $user);
+					redirect("User_view");
+				} else {
+					$this->session->set_flashdata(
+						'pesan',
+						'<div class="row purchace-popup">
+						<div class="col-12 stretch-card grid-margin">
+						  <div class="card card-secondary">
+							<span class="card-body d-lg-flex align-items-center">
+							  <p class="mb-lg-0">Username sudah terpakai.</p>
+							  <button class="close popup-dismiss ml-2">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</span>
+						  </div>
+						</div>
+					  </div>'
+					);
+					redirect("User_view/login");
+				}
+			} else {
+				$this->session->set_flashdata(
+					'pesan',
+					'<div class="row purchace-popup">
+					<div class="col-12 stretch-card grid-margin">
+					  <div class="card card-secondary">
+						<span class="card-body d-lg-flex align-items-center">
+						  <p class="mb-lg-0">Username sudah terpakai.</p>
+						  <button class="close popup-dismiss ml-2">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</span>
+					  </div>
+					</div>
+				  </div>'
+				);
+				redirect("User_view/login");
+			}
+		} 
+		// else {
+		// 	$this->session->set_flashdata(
+		// 		'login-error',
+		// 		'<div class="alert alert-danger mr-auto">Server Error Coba Lagi</div>'
+		// 	);
+		// 	redirect("user_view/user_login");
+		// }
+	}
     public function simpan_analisa()
 	{
 
@@ -24,7 +97,7 @@ class User_event extends CI_Controller {
 	public function user_register()
 	{
 		if ($this->input->post('simpan')) {
-			$username = $this->input->post('nama');
+			$nama = $this->input->post('nama');
 			$username = $this->input->post('username');
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
@@ -34,9 +107,20 @@ class User_event extends CI_Controller {
 			if($this->form_validation->run() == FALSE){
 				$this->session->set_flashdata(
 					'pesan',
-					'<div class="alert alert-danger mr-auto">Password minimal 8 Karakter.</div>'
+					'<div class="row purchace-popup">
+					<div class="col-12 stretch-card grid-margin">
+					  <div class="card card-secondary">
+						<span class="card-body d-lg-flex align-items-center">
+						  <p class="mb-lg-0">Password Harus lebih dari 8 karakter.</p>
+						  <button class="close popup-dismiss ml-2">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</span>
+					  </div>
+					</div>
+				  </div>'
 				);
-				redirect('user_view/user_register');
+				redirect('User_view/daftar');
 			}else{
 			$cek = $this->DataModel->select(array("username", "email"));
 			$cek = $this->DataModel->get_whereArr("user", "username = '" . $username . "' or email = '" . $email . "'")->row();
@@ -44,54 +128,120 @@ class User_event extends CI_Controller {
 				if ($cek->username == $username) {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="alert alert-danger mr-auto">Username yang anda masukkan sudah ada.</div>'   //tambaih dimissable yan
+						'<div class="row purchace-popup">
+						<div class="col-12 stretch-card grid-margin">
+						  <div class="card card-secondary">
+							<span class="card-body d-lg-flex align-items-center">
+							  <p class="mb-lg-0">Username sudah terpakai.</p>
+							  <button class="close popup-dismiss ml-2">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</span>
+						  </div>
+						</div>
+					  </div>'
 					);
-					redirect('user_view/user_register');
+					redirect('User_view/daftar');
 				} else if ($cek->email == $email) {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="alert alert-danger mr-auto">Email yang anda masukkan sudah ada.</div>'
+						'<div class="row purchace-popup">
+						<div class="col-12 stretch-card grid-margin">
+						  <div class="card card-secondary">
+							<span class="card-body d-lg-flex align-items-center">
+							  <p class="mb-lg-0">Email yang anda masukkan sudah terpakai.</p>
+							  <button class="close popup-dismiss ml-2">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</span>
+						  </div>
+						</div>
+					  </div>'
 					);
-					redirect('user_view/user_register');
+					redirect('User_view/daftar');
 				}
 			} else {
 				if ($password == $cpassword) {
 					$data = array(
+						"nama"	=> $nama,
 						"username" => $username,
 						"email"    => $email,
 						"password" => $this->bcrypt->hash_password($password),
+						"status"	=> "TIDAK AKTIF",
 						"created_at" => date("Y-m-d H:i:s")
 					);
 
-					$register = $this->DataModel->set_data('id_user', 'UUID()');
+					$register = $this->DataModel->set_data('id', 'UUID()');
 					$register = $this->DataModel->insert('user', $data);
 
 					if ($register) {
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="alert alert-success mr-auto">Akun berhasil dibuat, anda dapat melanjutkan untuk login</div>'
+							'<div class="row purchace-popup">
+							<div class="col-12 stretch-card grid-margin">
+							  <div class="card card-secondary">
+								<span class="card-body d-lg-flex align-items-center">
+								  <p class="mb-lg-0">Silahkan masuk.</p>
+								  <button class="close popup-dismiss ml-2">
+									<span aria-hidden="true">&times;</span>
+								  </button>
+								</span>
+							  </div>
+							</div>
+						  </div>'
 						);
-						redirect('user_view/user_login');
+						redirect('User_view/login');
 						//echo $this->session->flashdata('pesan');
 					} else {
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="alert alert-danger mr-auto">Ada Kesalahan server.</div>'
+							'<div class="row purchace-popup">
+							<div class="col-12 stretch-card grid-margin">
+							  <div class="card card-secondary">
+								<span class="card-body d-lg-flex align-items-center">
+								  <p class="mb-lg-0">Gagal mendaftar.</p>
+								  <button class="close popup-dismiss ml-2">
+									<span aria-hidden="true">&times;</span>
+								  </button>
+								</span>
+							  </div>
+							</div>
+						  </div>'
 						);
-						redirect('user_view/user_register');
+						redirect('User_view/daftar');
 					}
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="alert alert-danger mr-auto">Password yang anda masukkan tidak sama.</div>'
+						'<div class="row purchace-popup">
+						<div class="col-12 stretch-card grid-margin">
+						  <div class="card card-secondary">
+							<span class="card-body d-lg-flex align-items-center">
+							  <p class="mb-lg-0">Password tidak sama.</p>
+							  <button class="close popup-dismiss ml-2">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</span>
+						  </div>
+						</div>
+					  </div>'
 					);
-					redirect('user_view/user_register');
+					redirect('User_view/daftar');
 				}
 			}
 			}
 
 			
 		}
+	}
+	function logout()
+	{
+		$sess_array = array(
+			'email' => '',
+		);
+		$this->session->unset_userdata('user_data', $sess_array);
+		redirect('/User_view/login', 'refresh');
+		exit();
 	}
 
     

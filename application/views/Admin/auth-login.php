@@ -4,6 +4,7 @@
         <div class="content-wrapper d-flex align-items-center auth">
           <div class="row flex-grow">
             <div class="col-lg-4 mx-auto">
+            <?= $this->session->flashdata('pesan'); ?>
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
                   <img src="<?=base_url()?>assets/images/logo.svg">

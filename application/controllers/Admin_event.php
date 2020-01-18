@@ -9,6 +9,7 @@ class Admin_event extends CI_Controller {
 		parent::__construct();
 		$this->load->model('DataModel');
 		$this->load->library('bcrypt');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
