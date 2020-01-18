@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title><?= $title;?></title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><?= $judul;?></title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="<?=base_url()?>assets/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css" <!-- End layout styles -->
+    <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.png" />
+  </head>
+  <style>
+    #modal-kotak{
+	margin:5% 30% 30% 30%;
+	width: 500px;	
+	height: 200px;
+	position: absolute;
+	position:fixed;
+	z-index:1002;
+	display: none;
+	background: white;	
+}
+#atas{
+	font-size: 15pt;
+	padding: 20px;	
+	height: 80%;
+}
+#bawah{
+	background: #fff;
+}
+ 
 
-  <!-- General CSS Files -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+#bg{
+	opacity:.80;
+	position: absolute;
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index:1001;
+	opacity: 0.8;
+}
 
-  <!-- CSS Libraries -->
-  <!-- <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
-  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"> -->
-
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="<?= base_url()?>assets/css/style.css">
-  <link rel="stylesheet" href="<?= base_url()?>assets/css/components.css">
-</head>
-
+  </style>
+  <body>
