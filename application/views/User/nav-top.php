@@ -75,10 +75,10 @@
                                 </div>
                             </li>
              
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-f fa-folder"></i>Profil</a>
                                
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </nav>

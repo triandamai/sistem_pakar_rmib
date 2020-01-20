@@ -30,9 +30,7 @@ id
 id_indikator
 nama
 tabel
-jenis
 jenis_kelamin
-no_urut
 created_at
 updated_at
 
