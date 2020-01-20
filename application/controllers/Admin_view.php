@@ -31,6 +31,8 @@ class Admin_view extends CI_Controller {
     public function data_indikator()
 	{
             $data['judul'] = "Admin | Masuk";
+            $data['indikator'] = $this->DataModel->getData("indikator")->result();
+           // die(json_encode($data));
             $this->load->view('header', $data);
             $this->load->view('Admin/nav-top', $data);
                 $this->load->view('Admin/data-indikator', $data);
@@ -41,6 +43,8 @@ class Admin_view extends CI_Controller {
     public function data_user()
 	{
             $data['judul'] = "Admin | Masuk";
+            $data['user'] = $this->DataModel->getData("user")->result_array();
+          // die(json_encode($data));
             $this->load->view('header', $data);
             $this->load->view('Admin/nav-top', $data);
                 $this->load->view('Admin/data-user', $data);

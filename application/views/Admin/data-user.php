@@ -39,37 +39,53 @@
                                     <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Updated</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                          <?php 
+                                          $no =1;
+                                          foreach($user as $u){?>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                <td><?= $no;?></td>
+                                                <td><?= $u['nama'];?></td>
+                                                <td><?= $u['email'];?></td>
+                                                <td><?= $u['status'];?></td>
+                                                <td><?= $u['updated_at'];?></td>
                                                 <td>
-                                                  <a href="#" class="btn btn-primary btn-sm">Detail</a>
-                                                  <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                  <?php if( $u['status'] == "AKTIF"){?>
+                                                    <form action="<?= base_url()?>index.php/Admin_event/ubah_status_user" method="POST">
+                                                    <input type="hidden" name="id_user" value="<?= $u['id']?>">
+                                                    <input type="hidden" name="status" value="TIDAK AKTIF">
+                                                    <input type="submit" class="btn btn-danger btn-sm" value="NONAKTIFKAN">
+                                                    </form>
+                                                  
+                                                  <?php }else{?>
+                                                    <form action="<?= base_url()?>index.php/Admin_event/ubah_status_user" method="POST">
+                                                    <input type="hidden" name="id_user" value="<?= $u['id']?>">
+                                                    <input type="hidden" name="status" value="AKTIF">
+                                                    <input type="submit" class="btn btn-primary btn-sm" value="AKTIFKAN">
+                                                    </form>
+                                                  <?php }?>
+                                                  
                                                 </td>
                                             </tr>
+                                          <?php 
+                                        $no++;
+                                        }?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Updated</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
