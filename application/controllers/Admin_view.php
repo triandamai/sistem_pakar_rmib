@@ -32,6 +32,7 @@ class Admin_view extends CI_Controller {
 	{
             $data['judul'] = "Admin | Masuk";
             $data['indikator'] = $this->DataModel->getData("indikator")->result();
+            $data['subindikator'] = $this->DataModel->getData("sub_indikator")->result();
            // die(json_encode($data));
             $this->load->view('header', $data);
             $this->load->view('Admin/nav-top', $data);

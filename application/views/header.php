@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url()?>assets/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title><?= $judul;?></title>
+    <script src="<?= base_url()?>assets/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
