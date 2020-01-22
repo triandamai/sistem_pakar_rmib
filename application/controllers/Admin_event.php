@@ -14,21 +14,27 @@ class Admin_event extends CI_Controller {
 
 	public function index()
 	{
-
+		redirect("Admin_view");
 		
     }
     public function login()
 	{
 		
-		
-				$email = $this->input->post('email');
-				$password = $this->input->post('password');
-	
-				$cek = $this->DataModel->getWhere('email', $email);
-				$cek = $this->DataModel->getData('admin')->row();
-	
-				if ($cek != null) {
-					// if ($this->bcrypt->check_password($password, $cek->password)) {
+		if ($this->input->post('username')) {
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+
+			$cek = $this->DataModel->getWhere('username', $username);
+			$cek = $this->DataModel->getData('admin')->row();
+
+			if ($cek != null) {
+				if($this->bcrypt->check_password($password,$cek->password)){
+			
+					$datas = array(
+						"updated_at" => date("Y-m-d H:i:s")
+					);
+
+					$this->DataModel->update('id', $cek->id, 'user', $datas);
 					if ($cek->password == $password) {
 						$datas = array(
 							"updated_at" => date("Y-m-d H:i:s")
@@ -49,25 +55,31 @@ class Admin_event extends CI_Controller {
 						//kie bar di redirect maring view apa pwe?
 						//aku bingung hehe
 						redirect('admin_view');
-	
-					} else {
-						$this->session->set_flashdata(
-							'login-error',
-							'<div class="alert alert-danger mr-auto">Password salah</div>'
-						);
-						redirect('admin_view/admin_login');
-					}
+		
+					
 				} else {
 					$this->session->set_flashdata(
-						'login-error',
-						'<div class="alert alert-danger mr-auto">Akun tidak ditemukan</div>'
+						'pesan',
+						'<div class="alert alert-success mr-auto">Username atau Password tidak ada</div>'
 					);
-					redirect('admin_view/admin_login');
+					redirect("Admin_view/login");
 				}
-			
-
-		
-    }
+			} else {
+				$this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-success mr-auto">Akun tidak ditemukan!</div>'
+				);
+				redirect("Admin_view/login");
+			}
+		}else {
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-danger mr-auto">Kesalahan server</div>'
+			);
+			redirect("Admin_view/login");
+			}
+		}
+	}
     public function tambah_indikator()
 	{
 		$nama = $this->input->post("nama");

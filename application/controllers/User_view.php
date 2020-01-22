@@ -64,6 +64,47 @@ class User_view extends CI_Controller {
 
     public function mulai_analisa()
 	{
+        $nama = $this->input->post('nama');
+		$jenis_kelamin = $this->input->post('jk');
+		$ttl = $this->input->post('ttl');
+        $id_user = $this->session->userdata['user_data']['id'];
+        
+        $state_indikator = $this->input->get('state');
+        if($state_indikator == null || $state_indikator == "" || isempty($state_indikator)){
+            //ini view idikator pertma
+            $kode = "";
+            $query = $this->db->get('hasil_analisa');
+            $urutan_surat = $query->num_rows();
+            if($urutan_surat == 0){
+                $urut_surat = 1;
+            }else {
+                $urut_surat = $urutan_surat+1;
+            }
+            $kode = sprintf("%03d", $urut_surat);
+    
+            $data_session_analisa = array(
+                "id_analisa" => "ANALISA_".$kode,
+                "id_user" => $id_user,
+                "ttl" => $ttl,
+                "nama" => $nama,
+                "jenis_kelamin" => $jenis_kelamin,
+                "created_at" => date("Y-m-d H:i:s"),
+                "updated_at" => date("Y-m-d H:i:s")
+            );
+            $simpan = $this->DataModel->insert("hasil_analisa");
+            if($simpan){
+
+            }else{
+
+            }
+          //  die(json_encode($data_session_analisa));
+            
+        }else{
+            //jika ada get data indikator
+            
+        }
+
+
         if ($this->isLoggedIn()) {
             $data['judul'] = "User | Home";
             $data['nama_section'] = "Home";

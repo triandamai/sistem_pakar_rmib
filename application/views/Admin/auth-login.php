@@ -1,13 +1,14 @@
 <div class="splash-container">
+<?= $this->session->flashdata('pesan'); ?>
         <div class="card ">
             <div class="card-header text-center"><a><img class="logo-img" src="<?= base_url()?>assets/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
                 <form action="<?= base_url()?>index.php/Admin_event/login" method="POST">
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
+                        <input class="form-control form-control-lg" name="username" id="username" type="text" placeholder="Username" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                        <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Password">
                     </div>
                     <input type="hidden" value="kirim" name="kirirm" >
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>

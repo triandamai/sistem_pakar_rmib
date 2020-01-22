@@ -17,6 +17,7 @@ class User_event extends CI_Controller {
 
 		
 	}
+
 	public function login()
 	{
 		if ($this->input->post('username')) {
