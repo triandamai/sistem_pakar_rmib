@@ -64,57 +64,60 @@ class User_view extends CI_Controller {
 
     public function mulai_analisa()
 	{
+        if ($this->isLoggedIn()) {
         $nama = $this->input->post('nama');
 		$jenis_kelamin = $this->input->post('jk');
 		$ttl = $this->input->post('ttl');
         $id_user = $this->session->userdata['user_data']['id'];
         
-        $state_indikator = $this->input->get('state');
-        if($state_indikator == null || $state_indikator == "" || isempty($state_indikator)){
-            //ini view idikator pertma
-            $kode = "";
-            $query = $this->db->get('hasil_analisa');
-            $urutan_surat = $query->num_rows();
-            if($urutan_surat == 0){
-                $urut_surat = 1;
-            }else {
-                $urut_surat = $urutan_surat+1;
-            }
-            $kode = sprintf("%03d", $urut_surat);
-    
-            $data_session_analisa = array(
-                "id_analisa" => "ANALISA_".$kode,
-                "id_user" => $id_user,
-                "ttl" => $ttl,
-                "nama" => $nama,
-                "jenis_kelamin" => $jenis_kelamin,
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s")
-            );
-            $simpan = $this->DataModel->insert("hasil_analisa");
-            if($simpan){
 
+        $state_tabel = $this->input->get('tabel');
+
+        if($state_tabel == null || $state_tabel == "" || empty($state_tabel)){
+
+                $whereArr = array(
+                    'tabel'=> "A",
+                    'jk' => "jk"
+                );
+                $data['judul'] = "User | Home";
+                $data['nama_section'] = "Home";
+                $data['title_section'] = "Selamat Datang!";
+                $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
+                $data['sub_indikator'] = $this->DataModel->get_whereArr_sub('sub_indikator',$whereArr);
+               
+                die(json_encode($data));
+                
+                $this->load->view('header', $data);
+                $this->load->view('user/nav-top', $data);
+                $this->load->view('user/mulai-analisa', $data);
+                $this->load->view('user/nav-bottom', $data);
+                $this->load->view('footer', $data);
+                
             }else{
-
+                redirect("User_view/isi_data_analisa");
             }
           //  die(json_encode($data_session_analisa));
             
         }else{
-            //jika ada get data indikator
             
-        }
+                //ambil tabel selanjutnya sesuai param
+                $whereArr = array(
+                    'tabel' => $state_tabel,
+                    'jk' => $jenis_kelamin
+                );
 
-
-        if ($this->isLoggedIn()) {
-            $data['judul'] = "User | Home";
-            $data['nama_section'] = "Home";
-            $data['title_section'] = "Selamat Datang!";
-            $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
-            $this->load->view('header', $data);
+                $data['judul'] = "User | Home";
+                $data['nama_section'] = "Home";
+                $data['title_section'] = "Selamat Datang!";
+                $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
+                $data['sub_indikator'] = $this->DataModel->get_whereArr('sub_indikator',$whereArr);
+                
+                $this->load->view('header', $data);
                 $this->load->view('user/nav-top', $data);
                 $this->load->view('user/mulai-analisa', $data);
                 $this->load->view('user/nav-bottom', $data);
-            $this->load->view('footer', $data);
+                $this->load->view('footer', $data);
+        }
         }else{
             redirect('user_view/login');
         }

@@ -293,7 +293,8 @@ class Admin_event extends CI_Controller {
 					}
 
 		
-    }
+	}
+
 	public function ubah_status_user()
 	{
 		$status = $this->input->post("status");

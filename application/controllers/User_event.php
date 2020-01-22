@@ -85,11 +85,7 @@ class User_event extends CI_Controller {
 			redirect("User_view/login");
 		}
 	}
-    public function simpan_analisa()
-	{
 
-		
-	}
 	public function user_register()
 	{
 		if ($this->input->post('simpan')) {
@@ -184,6 +180,101 @@ class User_event extends CI_Controller {
 
 			
 		}
+	}
+	public function simpan_analisa()
+	{
+
+		$nama = $this->input->post('nama');
+		$jenis_kelamin = $this->input->post('jk');
+		$ttl = $this->input->post('ttl');
+        $id_user = $this->session->userdata['user_data']['id'];
+		
+		$tabel = $this->input->post('tabel');
+		$val_1 = $this->input->post('val_1');
+		$val_2 = $this->input->post('val_2');
+		$val_3 = $this->input->post('val_3');
+		$val_4 = $this->input->post('val_4');
+		$val_5 = $this->input->post('val_5');
+		$val_6 = $this->input->post('val_6');
+		$val_7 = $this->input->post('val_7');
+		$val_8 = $this->input->post('val_8');
+		$val_9 = $this->input->post('val_9');
+		$val_10 = $this->input->post('val_10');
+		$val_11 = $this->input->post('val_11');
+		$val_12 = $this->input->post('val_12');
+
+		$simpan = $this->DataModel->insert();
+
+		if($tabel == null || $tabel == "" || empty($tabel)){
+		            //ini view idikator pertama
+					$kode = "";
+					$query = $this->db->get('hasil_analisa');
+					$urutan_surat = $query->num_rows();
+					if($urutan_surat == 0){
+						$urut_surat = 1;
+					}else {
+						$urut_surat = $urutan_surat+1;
+					}
+					$kode = sprintf("%03d", $urut_surat);
+			
+					$data_session_analisa = array(
+						"id_analisa" => "ANALISA_".$kode,
+						"id_user" => $id_user,
+						"ttl" => $ttl,
+						"nama" => $nama,
+						"jenis_kelamin" => $jenis_kelamin,
+						"created_at" => date("Y-m-d H:i:s"),
+						"updated_at" => date("Y-m-d H:i:s")
+					);
+					$simpan = $this->DataModel->insert("hasil_analisa");
+					if($simpan){
+						//ke table Awal
+					   
+						$whereArr = array(
+							'tabel' => "A",
+							'jk'=> $jenis_kelamin
+						);
+						$this->session->set_userdata('diagnosa_data',$data_arr);
+					}
+		}
+
+		if($tabel == "A"){
+			if($tabel == "A"){
+				//ke tabel B
+			}else if($tabel == "B"){
+				//ke tabel C
+				redirect();
+			}else if($tabel == "C"){
+				//ke tabel D
+				redirect();
+			}else if($tabel == "D"){
+				//ke tabel E
+				redirect();
+			}else if($tabel == "E"){
+				//ke tabel F
+				redirect();
+			}else if($tabel == "F"){
+				//ke tabel G
+				redirect();
+			}else if($tabel == "G"){
+				//ke tabel H
+				redirect();
+			}else if($tabel == "H"){
+				//ke tabel I
+				redirect();
+			}else if($tabel == "I"){
+				//ke tabel Akhir
+				redirect();
+			}else{
+				//ke tabel tidak ada
+				redirect();
+			}
+		}else{
+			//kembali ke state ini lagi
+			//redirect ke tabel $tabel
+
+		}
+		
 	}
 	function logout()
 	{

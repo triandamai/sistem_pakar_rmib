@@ -92,6 +92,11 @@ class DataModel extends CI_Model{
     function get_whereArr($table, $where) {
         return $this->db->get_where($table, $where);
     }
+    function get_whereArr_sub($table, $where) {
+        $q = $this->db->order_by('no_urut','asc');
+        $q = $this->db->get_where($table, $where);
+        return $q;
+    }
     function count_all($table)
     {
         return $this->db->count_all($table);
