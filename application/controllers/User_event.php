@@ -181,6 +181,7 @@ class User_event extends CI_Controller {
 			
 		}
 	}
+
 	public function simpan_analisa()
 	{
 		$tabel = $this->input->post('tabel');
@@ -214,7 +215,7 @@ class User_event extends CI_Controller {
 					if($simpan){
 						//ke table Awal
 						$this->session->set_userdata('analisa_data',$data_session_analisa);
-						redirect('User_view/mulai_analisa');
+						redirect('User_view/mulai_analisa?tabel=A');
 					}else{
 						//kembali ke isi biodata
 						$this->session->unset_userdata['analisa_data'];
@@ -223,7 +224,7 @@ class User_event extends CI_Controller {
 		}else{
 			$val = $this->input->post('val');
 			$idsub = $this->input->post('id_sub');
-
+			
 			$data = array();
 
 			$index= 0;
@@ -236,46 +237,53 @@ class User_event extends CI_Controller {
 						'id_sub' => $idsub[$index],
 						'no_urut' => $index +1,
 						'value' => $val[$index],
-						'created_at' => '',
-						'updated_at' => '',
+						'tabel' => $tabel,
+						'created_at' => date("Y-m-d H:i:s"),
+						'updated_at' => date("Y-m-d H:i:s"),
 						
 					)
 				);
 
 				$index++;
 			}
-
+			//die(json_encode($data));
 			$simpan = $this->DataModel->insert_many('detail_analisa',$data);
-			if($tabel == "A"){
-				//ke tabel B
-			}else if($tabel == "B"){
-				//ke tabel C
-				redirect();
-			}else if($tabel == "C"){
-				//ke tabel D
-				redirect();
-			}else if($tabel == "D"){
-				//ke tabel E
-				redirect();
-			}else if($tabel == "E"){
-				//ke tabel F
-				redirect();
-			}else if($tabel == "F"){
-				//ke tabel G
-				redirect();
-			}else if($tabel == "G"){
-				//ke tabel H
-				redirect();
-			}else if($tabel == "H"){
-				//ke tabel I
-				redirect();
-			}else if($tabel == "I"){
-				//ke tabel Akhir
-				redirect();
+			if($simpan){
+				if($tabel == "A"){
+					//ke tabel B
+					redirect('User_view/mulai_analisa?tabel=B');
+				}else if($tabel == "B"){
+					//ke tabel C
+					redirect('User_view/mulai_analisa?tabel=C');
+				}else if($tabel == "C"){
+					//ke tabel D
+					redirect('User_view/mulai_analisa?tabel=D');
+				}else if($tabel == "D"){
+					//ke tabel E
+					redirect('User_view/mulai_analisa?tabel=E');
+				}else if($tabel == "E"){
+					//ke tabel F
+					redirect('User_view/mulai_analisa?tabel=F');
+				}else if($tabel == "F"){
+					//ke tabel G
+					redirect('User_view/mulai_analisa?tabel=G');
+				}else if($tabel == "G"){
+					//ke tabel H
+					redirect('User_view/mulai_analisa?tabel=H');
+				}else if($tabel == "H"){
+					//ke tabel I
+					redirect('User_view/mulai_analisa?tabel=I');
+				}else if($tabel == "I"){
+					//ke tabel Akhir
+					redirect('User_view/hasil_analisa');
+				}else{
+					//ke tabel tidak ada
+					redirect('User_view/isi_data_analisa');
+				}
 			}else{
-				//ke tabel tidak ada
-				redirect();
+
 			}
+			
 		}
 		
 	}

@@ -1,4 +1,4 @@
-          <?php die(json_encode($sub_indikator));?>
+          <?php// die(json_encode($sub_indikator));?>
           <div class="container-fluid  dashboard-content">
             <div class="row">
               <div class="col-md-3 grid-margin"></div>
@@ -13,6 +13,7 @@
                         <div class="form-group row">
                            <label for="inputUserName" class="col-3 col-lg-2 col-form-label text-right"><?= $si->nama;?></label>
                            <div class="col-9 col-lg-10">
+                           <INPUT type="hidden" name="tabel" value="<?= $_GET['tabel'];?>">
                            <input id="inputUserName" type="hidden" name="id_sub[]" value="<?= $si->id;?>">
                             <input id="inputUserName" type="text" name="val[]" data-parsley-trigger="change" required placeholder="Jono" autocomplete="off" class="form-control">
                            </div>

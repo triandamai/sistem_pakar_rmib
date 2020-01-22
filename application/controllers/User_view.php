@@ -61,7 +61,65 @@ class User_view extends CI_Controller {
         }
 		
     }
-
+    public function hasil_analisa()
+	{
+        $whereA = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "A"
+		);
+		$whereB = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "B"
+		);
+		$whereC = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "C"
+		);
+		$whereD = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "D"
+		);
+		$whereE = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "E"
+		);
+		$whereF = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "F"
+		);
+		$whereG = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "G"
+		);
+		$whereH = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "H"
+		);
+		$whereI = array(
+			'id_user' => $this->session->userdata['user_data']['id'],
+			'id_hasil' => $this->session->userdata['analisa_data']['id'],
+			'tabel' => "I"
+		);
+		$data['detail_A'] = $this->DataModel->get_whereArr('detail_analisa',$whereA)->result();
+		$data['detail_B'] = $this->DataModel->get_whereArr('detail_analisa',$whereB)->result();
+		$data['detail_C'] = $this->DataModel->get_whereArr('detail_analisa',$whereC)->result();
+		$data['detail_D'] = $this->DataModel->get_whereArr('detail_analisa',$whereD)->result();
+		$data['detail_E'] = $this->DataModel->get_whereArr('detail_analisa',$whereE)->result();
+		$data['detail_F'] = $this->DataModel->get_whereArr('detail_analisa',$whereF)->result();
+		$data['detail_G'] = $this->DataModel->get_whereArr('detail_analisa',$whereG)->result();
+		$data['detail_H'] = $this->DataModel->get_whereArr('detail_analisa',$whereH)->result();
+		$data['detail_I'] = $this->DataModel->get_whereArr('detail_analisa',$whereI)->result();
+        //die(json_encode($data));
+     $this->load->view('hasil_analisa',$data);
+    }
     public function mulai_analisa()
 	{
 
