@@ -64,29 +64,25 @@ class User_view extends CI_Controller {
 
     public function mulai_analisa()
 	{
+
         if ($this->isLoggedIn()) {
-        $nama = $this->input->post('nama');
-		$jenis_kelamin = $this->input->post('jk');
-		$ttl = $this->input->post('ttl');
-        $id_user = $this->session->userdata['user_data']['id'];
-        
-
-        $state_tabel = $this->input->get('tabel');
-
-        if($state_tabel == null || $state_tabel == "" || empty($state_tabel)){
+            $id_user = $this->session->userdata['user_data']['id'];
+            $state_tabel = $this->input->get('tabel');
+            if($state_tabel == null || $state_tabel == "" || empty($state_tabel)){
 
                 $whereArr = array(
                     'tabel'=> "A",
-                    'jk' => "jk"
+                    'jk' => $this->session->userdata['analisa_data']['jenis_kelamin']
                 );
                 $data['judul'] = "User | Home";
                 $data['nama_section'] = "Home";
                 $data['title_section'] = "Selamat Datang!";
                 $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
-                $data['sub_indikator'] = $this->DataModel->get_whereArr_sub('sub_indikator',$whereArr);
+                $data['sub_indikator'] = $this->DataModel->get_whereArr_sub('sub_indikator',$whereArr)->result();
                
-                die(json_encode($data));
-                
+                //die(json_encode($data));
+                //die(json_encode($whereArr));
+
                 $this->load->view('header', $data);
                 $this->load->view('user/nav-top', $data);
                 $this->load->view('user/mulai-analisa', $data);
@@ -94,33 +90,29 @@ class User_view extends CI_Controller {
                 $this->load->view('footer', $data);
                 
             }else{
-                redirect("User_view/isi_data_analisa");
-            }
-          //  die(json_encode($data_session_analisa));
-            
-        }else{
-            
-                //ambil tabel selanjutnya sesuai param
-                $whereArr = array(
+                 //ambil tabel selanjutnya sesuai param
+                 $whereArr = array(
                     'tabel' => $state_tabel,
-                    'jk' => $jenis_kelamin
+                    'jk' => $this->session->userdata['analisa_data']['jenis_kelamin']
                 );
 
                 $data['judul'] = "User | Home";
                 $data['nama_section'] = "Home";
                 $data['title_section'] = "Selamat Datang!";
                 $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
-                $data['sub_indikator'] = $this->DataModel->get_whereArr('sub_indikator',$whereArr);
-                
+                $data['sub_indikator'] = $this->DataModel->get_whereArr('sub_indikator',$whereArr)->result();
+                die(json_encode($data));
                 $this->load->view('header', $data);
                 $this->load->view('user/nav-top', $data);
                 $this->load->view('user/mulai-analisa', $data);
                 $this->load->view('user/nav-bottom', $data);
                 $this->load->view('footer', $data);
-        }
+            }
+
         }else{
             redirect('user_view/login');
         }
+
 		
     }
     public function data_history()

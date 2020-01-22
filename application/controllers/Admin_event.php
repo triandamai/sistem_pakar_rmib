@@ -191,8 +191,10 @@ class Admin_event extends CI_Controller {
 
 		$where_arr = array(
 			"tabel" => $tabel,
-			"no_urut"=> $urut
+			"no_urut"=> $urut,
+			"jk" => $jk,
 		);
+		
 		$cek = $this->DataModel->get_whereArr('sub_indikator', $where_arr)->row();
 
 			if ($cek == null) {

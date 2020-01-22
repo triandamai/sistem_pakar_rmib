@@ -183,27 +183,11 @@ class User_event extends CI_Controller {
 	}
 	public function simpan_analisa()
 	{
-
+		$tabel = $this->input->post('tabel');
 		$nama = $this->input->post('nama');
 		$jenis_kelamin = $this->input->post('jk');
 		$ttl = $this->input->post('ttl');
-        $id_user = $this->session->userdata['user_data']['id'];
-		
-		$tabel = $this->input->post('tabel');
-		$val_1 = $this->input->post('val_1');
-		$val_2 = $this->input->post('val_2');
-		$val_3 = $this->input->post('val_3');
-		$val_4 = $this->input->post('val_4');
-		$val_5 = $this->input->post('val_5');
-		$val_6 = $this->input->post('val_6');
-		$val_7 = $this->input->post('val_7');
-		$val_8 = $this->input->post('val_8');
-		$val_9 = $this->input->post('val_9');
-		$val_10 = $this->input->post('val_10');
-		$val_11 = $this->input->post('val_11');
-		$val_12 = $this->input->post('val_12');
-
-		$simpan = $this->DataModel->insert();
+		$id_user = $this->session->userdata['user_data']['id'];
 
 		if($tabel == null || $tabel == "" || empty($tabel)){
 		            //ini view idikator pertama
@@ -218,27 +202,39 @@ class User_event extends CI_Controller {
 					$kode = sprintf("%03d", $urut_surat);
 			
 					$data_session_analisa = array(
-						"id_analisa" => "ANALISA_".$kode,
+						"id" => "ANALISA_".$kode,
 						"id_user" => $id_user,
-						"ttl" => $ttl,
+						"TTL" => $ttl,
 						"nama" => $nama,
 						"jenis_kelamin" => $jenis_kelamin,
 						"created_at" => date("Y-m-d H:i:s"),
 						"updated_at" => date("Y-m-d H:i:s")
 					);
-					$simpan = $this->DataModel->insert("hasil_analisa");
+					$simpan = $this->DataModel->insert("hasil_analisa",$data_session_analisa);
 					if($simpan){
 						//ke table Awal
-					   
-						$whereArr = array(
-							'tabel' => "A",
-							'jk'=> $jenis_kelamin
-						);
-						$this->session->set_userdata('diagnosa_data',$data_arr);
+						$this->session->set_userdata('analisa_data',$data_session_analisa);
+						redirect('User_view/mulai_analisa');
+					}else{
+						//kembali ke isi biodata
+						$this->session->unset_userdata['analisa_data'];
+						redirect('User_view/isi_data_analisa');
 					}
-		}
+		}else{
+			$val_1 = $this->input->post('val_1');
+			$val_2 = $this->input->post('val_2');
+			$val_3 = $this->input->post('val_3');
+			$val_4 = $this->input->post('val_4');
+			$val_5 = $this->input->post('val_5');
+			$val_6 = $this->input->post('val_6');
+			$val_7 = $this->input->post('val_7');
+			$val_8 = $this->input->post('val_8');
+			$val_9 = $this->input->post('val_9');
+			$val_10 = $this->input->post('val_10');
+			$val_11 = $this->input->post('val_11');
+			$val_12 = $this->input->post('val_12');
 
-		if($tabel == "A"){
+
 			if($tabel == "A"){
 				//ke tabel B
 			}else if($tabel == "B"){
@@ -269,10 +265,6 @@ class User_event extends CI_Controller {
 				//ke tabel tidak ada
 				redirect();
 			}
-		}else{
-			//kembali ke state ini lagi
-			//redirect ke tabel $tabel
-
 		}
 		
 	}

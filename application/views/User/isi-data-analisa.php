@@ -7,7 +7,7 @@
                             <div class="card">
                                 <h5 class="card-header">Isi Data Diri </h5>
                                 <div class="card-body">
-                                    <form action="<?= base_url()?>index.php/User_event/mulai_analisa"  method="POST" id="basicform" data-parsley-validate="">
+                                    <form action="<?= base_url()?>index.php/User_event/simpan_analisa"  method="POST" id="basicform" data-parsley-validate="">
                                         <div class="form-group">
                                             <label for="inputUserName">Nama</label>
                                             <input id="inputUserName" type="text" name="nama" data-parsley-trigger="change" required placeholder="Jono" autocomplete="off" class="form-control">
