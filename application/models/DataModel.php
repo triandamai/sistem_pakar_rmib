@@ -76,7 +76,10 @@ class DataModel extends CI_Model{
         $query = $this->db->insert($table,$data);
         return $query;
     }
-
+    function insert_many($table,$data){
+        $query = $this->db->insert_batch($table,$data);
+        return $query;
+    }
     function update($col,$condition,$table,$data) {
         $this->db->where($col,$condition);
         $query = $this->db->update($table, $data);

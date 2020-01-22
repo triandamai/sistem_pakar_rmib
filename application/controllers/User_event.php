@@ -221,20 +221,31 @@ class User_event extends CI_Controller {
 						redirect('User_view/isi_data_analisa');
 					}
 		}else{
-			$val_1 = $this->input->post('val_1');
-			$val_2 = $this->input->post('val_2');
-			$val_3 = $this->input->post('val_3');
-			$val_4 = $this->input->post('val_4');
-			$val_5 = $this->input->post('val_5');
-			$val_6 = $this->input->post('val_6');
-			$val_7 = $this->input->post('val_7');
-			$val_8 = $this->input->post('val_8');
-			$val_9 = $this->input->post('val_9');
-			$val_10 = $this->input->post('val_10');
-			$val_11 = $this->input->post('val_11');
-			$val_12 = $this->input->post('val_12');
+			$val = $this->input->post('val');
+			$idsub = $this->input->post('id_sub');
 
+			$data = array();
 
+			$index= 0;
+		
+			foreach($val as $dataval){
+				array_push($data,
+					array(
+						'id_user' => $id_user = $this->session->userdata['user_data']['id'],
+						'id_hasil' => $this->session->userdata['analisa_data']['id'],	
+						'id_sub' => $idsub[$index],
+						'no_urut' => $index +1,
+						'value' => $val[$index],
+						'created_at' => '',
+						'updated_at' => '',
+						
+					)
+				);
+
+				$index++;
+			}
+
+			$simpan = $this->DataModel->insert_many('detail_analisa',$data);
 			if($tabel == "A"){
 				//ke tabel B
 			}else if($tabel == "B"){

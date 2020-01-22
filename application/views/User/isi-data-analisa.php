@@ -15,6 +15,7 @@
                                         <div class="form-group">
                                             <label for="inputUserName">Tempat Tanggal Lahir</label>
                                             <input id="inputUserName" type="text" name="ttl" data-parsley-trigger="change" required placeholder="Mis : Purbalingga,16 september 1998" autocomplete="off" class="form-control">
+                                        </div>
                                         <div class="form-group">
                                             <label for="JKs">Jenis Kelamin</label>
                                             <select class="form-control" name="jk">
@@ -37,4 +38,5 @@
               <div class="col-md-3 grid-margin"></div>
             </div>
           </div>
+
          

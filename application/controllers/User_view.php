@@ -101,7 +101,7 @@ class User_view extends CI_Controller {
                 $data['title_section'] = "Selamat Datang!";
                 $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
                 $data['sub_indikator'] = $this->DataModel->get_whereArr('sub_indikator',$whereArr)->result();
-                die(json_encode($data));
+                //die(json_encode($data));
                 $this->load->view('header', $data);
                 $this->load->view('user/nav-top', $data);
                 $this->load->view('user/mulai-analisa', $data);
