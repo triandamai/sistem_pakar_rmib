@@ -66,9 +66,22 @@ class DataModel extends CI_Model{
         $query = $this->db->get($table);
         return $query;
     }
+    function getData_indikator($table){
+        $query = $this->db->order_by('no_urut','asc');
+        $query = $this->db->get($table);
+        
+        return $query;
+    }
 
     function getJoin($table,$condition,$type){
         $query = $this->db->join($table, $condition, $type);
+        return $query;
+    }
+    function getJoin_hasil(){
+        $query = $this->db->select('*');
+        $query = $this->db->from('hasil_analisa a');
+        $query = $this->db->join('user b', 'b.id = a.id_user','left');
+        $query = $this->db->get();
         return $query;
     }
 
