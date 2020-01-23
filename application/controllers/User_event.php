@@ -258,12 +258,13 @@ class User_event extends CI_Controller {
 				array_push($jumlah,$val[$index]);
 				$index++;
 			}
-
-			if(!array_sum($jumlah) == 78){
+			//die(json_encode(array_sum($jumlah)));
+			if(array_sum($jumlah) !== 78){
 				$this->session->set_flashdata(
 					'pesan',
 					'<div class="alert alert-danger" role="alert">
-						Data ang diinputkan tidak valid!
+						Data yang diinputkan tidak valid! <br>
+						Isilah dengan mengurutkan dari yang terkecil(1-12), setiap form tidak boleh memiliki jumlah yang sama!
 					</div>'
 				);
 				redirect('User_view/mulai_analisa?tabel='.$tabel);
@@ -297,7 +298,12 @@ class User_event extends CI_Controller {
 					redirect('User_view/mulai_analisa?tabel=I');
 				}else if($tabel == "I"){
 					//ke tabel Akhir
-					redirect('User_view/hasil_analisa');
+					$update_hasil = $this->DataModel->update('id',$this->session->userdata['analisa_data']['id'],'hasil_analisa',array('hasil'=>'SELESAI')); 
+					if($update_hasil){
+						redirect('User_view/hasil_analisa?hasil='.$this->session->userdata['analisa_data']['id']);
+					}else{
+						redirect('User_view/hasil_analisa?hasil='.$this->session->userdata['analisa_data']['id']);
+					}
 				}else{
 					//ke tabel tidak ada
 					$this->session->set_flashdata(

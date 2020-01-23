@@ -58,7 +58,7 @@ class Admin_view extends CI_Controller {
     public function data_user()
 	{
         if($this->isLoggedIn()){
-            $data['judul'] = "Admin | Data USer";
+            $data['judul'] = "Admin | Data User";
             $data['user'] = $this->DataModel->getData("user")->result_array();
           // die(json_encode($data));
             $this->load->view('header', $data);

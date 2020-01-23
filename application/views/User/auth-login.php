@@ -2,7 +2,7 @@
 <?= $this->session->flashdata('pesan'); ?>
         <div class="card ">
         
-            <div class="card-header text-center"><a><img class="logo-img" src="<?= base_url()?>assets/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><a><img class="logo-img" src="<?= base_url()?>assets/assets/images/logo.png" alt="logo"></a><span class="splash-description">Masuk dengan akun kamu.</span></div>
             <div class="card-body">
                 <form action="<?= base_url()?>index.php/User_event/login" method="POST">
                     <div class="form-group">
@@ -11,8 +11,8 @@
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Password" required>
                     </div>
-                    <input type="hidden" value="kirim" name="kirirm" >
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    <input type="hidden" value="kirim" name="kirim" >
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
                 </form>
             </div>
             <div class="card-footer bg-white p-0  ">

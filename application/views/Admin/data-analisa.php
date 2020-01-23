@@ -60,8 +60,16 @@
                                                 <td><?= $h->created_at;?></td>
                                                 <td><?= $h->TTL;?></td>
                                                 <td><?= $h->jenis_kelamin;?></td>
-                                                <td>
-                                                  <a href="<?= base_url()?>index.php/Admin_view/hasil_analisa?hasil=<?= $h->id;?>" class="btn btn-primary btn-sm">Detail</a>
+                                                <td><?php if($h->hasil == "SELESAI"){
+                                                    ?>
+                                                     <a href="<?= base_url()?>index.php/Admin_view/hasil_analisa?hasil=<?= $h->id;?>" class="btn btn-primary btn-sm">Detail</a>
+                                                    <?php
+                                                }else{
+                                                    ?>
+                                                     <a href="#" class="btn btn-danger btn-sm">Tidak Valid</a>
+                                                    <?php
+                                                }?>
+                                                 
                                                   <!-- <a href="#" class="btn btn-danger btn-sm">Hapus</a> -->
                                                 </td>
                                             </tr>

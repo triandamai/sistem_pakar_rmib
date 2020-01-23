@@ -50,14 +50,14 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
-                                Menu
+                                MENU
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link active" href="<?= base_url()?>index.php/Admin_view" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>   
                             </li>
                
                             <li class="nav-divider">
-                                Features
+                                FITUR
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Analisa</a>

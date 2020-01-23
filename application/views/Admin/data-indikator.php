@@ -1,18 +1,23 @@
+<style>
+.third{
+    
+}
+</style>
 <div class="container-fluid  dashboard-content">
 
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         
                         <div class="page-header">
-                            <h2 class="pageheader-title">Tabs</h2>
-                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
-                            
+                            <h2 class="pageheader-title">Data Indikator</h2>
+                            <!-- <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                             -->
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">UI Elements</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Tabs</li>
+                                        <li class="breadcrumb-item"><a href="<?= base_url()?>index.php/Admin_view" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Fitur</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Indikator</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -28,8 +33,8 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-12">
                         <?= $this->session->flashdata('pesan'); ?>
                             <div class="section-block">
-                                <h5 class="section-title">Simple Card Tabs</h5>
-                                <p>Takes the basic nav from above and adds the .nav-tabs class to generate a tabbed interface..</p>
+                                <h5 class="section-title">Data Indikator dan Sub Indikator</h5>
+                                <p></p>
                             </div>
                             <div class="simple-card">
                                 <ul class="nav nav-tabs" id="myTab5" role="tablist">
@@ -43,14 +48,8 @@
                                 </ul>
                                 <div class="tab-content" id="myTabContent5">
                                     <div class="tab-pane fade show active" id="indikator" role="tabpanel" aria-labelledby="home-tab-simple">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5 class="mb-0">Data Tables - Print, Excel, CSV, PDF Buttons</h5>
-                                                <p>This example shows DataTables and the Buttons extension being used with the Bootstrap 4 framework providing the styling.</p>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                                        <div class="table-responsive"> 
+                                            <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>No</th>
@@ -103,20 +102,12 @@
                                                             $no++;
                                                             }?>
                                                         </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>   
+                                            </table>
+                                        </div>  
                                     </div>
                                     <div class="tab-pane fade" id="subindikator" role="tabpanel" aria-labelledby="profile-tab-simple">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5 class="mb-0">Data Tables - Print, Excel, CSV, PDF Buttons</h5>
-                                                <p>This example shows DataTables and the Buttons extension being used with the Bootstrap 4 framework providing the styling.</p>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                                        <div class="table-responsive">
+                                            <table id="example" class="table table-striped table-bordered third" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>No</th>
@@ -170,9 +161,7 @@
                                                             }
                                                             ?>
                                                         </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
+                                            </table>
                                         </div>
                                     </div>   
                                 </div>
