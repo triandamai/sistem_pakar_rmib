@@ -96,20 +96,11 @@ class User_event extends CI_Controller {
 
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 			if($this->form_validation->run() == FALSE){
-				$this->session->set_flashdata(
+				$$this->session->set_flashdata(
 					'pesan',
-					'<div class="row purchace-popup">
-					<div class="col-12 stretch-card grid-margin">
-					  <div class="card card-secondary">
-						<span class="card-body d-lg-flex align-items-center">
-						  <p class="mb-lg-0">Password Harus lebih dari 8 karakter.</p>
-						  <button class="close popup-dismiss ml-2">
-							<span aria-hidden="true">&times;</span>
-						  </button>
-						</span>
-					  </div>
-					</div>
-				  </div>'
+					'<div class="alert alert-warning" role="alert">
+						Password minimal 8 karakter!
+					</div>'
 				);
 				redirect('User_view/daftar');
 			}else{
@@ -119,16 +110,16 @@ class User_event extends CI_Controller {
 				if ($cek->username == $username) {
 					$$this->session->set_flashdata(
 						'pesan',
-						'<div class="alert alert-primary" role="alert">
-						This is a primary alert—check it out!
+						'<div class="alert alert-danger" role="alert">
+							Username tidak tersedia!
 						</div>'
 					);
 					redirect('User_view/daftar');
 				} else if ($cek->email == $email) {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="alert alert-primary" role="alert">
-						This is a primary alert—check it out!
+						'<div class="alert alert-danger" role="alert">
+							Email sudah terpakai!
 						</div>'
 					);
 					redirect('User_view/daftar');
@@ -150,8 +141,8 @@ class User_event extends CI_Controller {
 					if ($register) {
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="alert alert-primary" role="alert">
-							This is a primary alert—check it out!
+							'<div class="alert alert-success" role="alert">
+								Berhasil silahkan login
 							</div>'
 						);
 						redirect('User_view/login');
@@ -159,8 +150,8 @@ class User_event extends CI_Controller {
 					} else {
 						$this->session->set_flashdata(
 							'pesan',
-							'<div class="alert alert-primary" role="alert">
-							This is a primary alert—check it out!
+							'<div class="alert alert-danger" role="alert">
+							Gagal mendaftar!
 							</div>'
 						);
 						redirect('User_view/daftar');
@@ -168,8 +159,8 @@ class User_event extends CI_Controller {
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
-						'<div class="alert alert-primary" role="alert">
-						This is a primary alert—check it out!
+						'<div class="alert alert-danger" role="alert">
+							Password tidak sesuai!
 						</div>'
 					);
 					redirect('User_view/daftar');

@@ -96,47 +96,47 @@ class Admin_view extends CI_Controller {
             
         }
         $whereA = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "A"
         );
         $whereB = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "B"
         );
         $whereC = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "C"
         );
         $whereD = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "D"
         );
         $whereE = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "E"
         );
         $whereF = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "F"
         );
         $whereG = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "G"
         );
         $whereH = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "H"
         );
         $whereI = array(
-            'id_user' => $this->session->userdata['user_data']['id'],
+            //'id_user' => $this->session->userdata['user_data']['id'],
             'id_hasil' => $get_idHasil,
             'tabel' => "I"
         );
