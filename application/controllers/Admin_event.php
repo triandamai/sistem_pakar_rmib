@@ -27,23 +27,26 @@ class Admin_event extends CI_Controller {
 			$cek = $this->DataModel->getWhere('username', $username);
 			$cek = $this->DataModel->getData('admin')->row();
 
+			//die(json_encode($password));
 			if ($cek != null) {
-				if($this->bcrypt->check_password($password,$cek->password)){
+				//if($this->bcrypt->check_password($password,$cek->password)){
+			
+					if($password == $cek->password){
 			
 					$datas = array(
 						"updated_at" => date("Y-m-d H:i:s")
 					);
 
-					$this->DataModel->update('id', $cek->id, 'user', $datas);
-					if ($cek->password == $password) {
+					$update =	$this->DataModel->update('id', $cek->id, 'user', $datas);
+					if ($update) {
 						$datas = array(
 							"updated_at" => date("Y-m-d H:i:s")
 						);
 	
-						$this->DataModel->update('id_admin', $cek->id_admin, 'admin', $datas);
+						$this->DataModel->update('id', $cek->id, 'admin', $datas);
 	
 						$user = array(
-							"id" => $cek->id_admin,
+							"id" => $cek->id,
 							"username" => $cek->username,
 							"email" => $cek->email,
 							"status" => true,
@@ -54,15 +57,12 @@ class Admin_event extends CI_Controller {
 					//	die(json_encode($user));
 						//kie bar di redirect maring view apa pwe?
 						//aku bingung hehe
-						redirect('admin_view');
+						redirect('Admin_view');
 		
 					
 				} else {
-					$this->session->set_flashdata(
-						'pesan',
-						'<div class="alert alert-success mr-auto">Username atau Password tidak ada</div>'
-					);
-					redirect("Admin_view/login");
+					
+					redirect("Admin_view");
 				}
 			} else {
 				$this->session->set_flashdata(
@@ -322,7 +322,15 @@ class Admin_event extends CI_Controller {
 		
 		
     }
-
+	function logout()
+	{
+		$sess_array = array(
+			'email' => '',
+		);
+		$this->session->unset_userdata('admin_data', $sess_array);
+		redirect('/Admin_view/login', 'refresh');
+		exit();
+	}
 
     
 }

@@ -4,6 +4,7 @@
                 <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        
                     <?= $this->session->flashdata('pesan'); ?>
                         <div class="page-header">
                             <h2 class="pageheader-title">Data Tables</h2>
@@ -36,82 +37,39 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                                <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>No</th>
+                                                <th>Kode</th>
+                                                <th>Nama</th>
+                                                <th>Tanggal</th>
+                                                <th>Tempat/Tgl Lahir</th>
+                                                <th>Jenis Kelamin</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                            <?php $no =1; 
+                                                foreach($data_hasil as $h){
+                                            ?>
+                                                <tr>
+                                                <td><?= $no;?></td>
+                                                <td><?= $h->id;?></td>
+                                                <td><?= $h->nama;?></td>
+                                                <td><?= $h->created_at;?></td>
+                                                <td><?= $h->TTL;?></td>
+                                                <td><?= $h->jenis_kelamin;?></td>
                                                 <td>
-                                                  <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalDetail">Detail</a>
-                                                <!-- Modal -->
-                                                    <div class="modal fade" id="modalDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Detail Analisa</h5>
-                                                                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <p>Woohoo, You are readng this text in a modal! Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <a href="#" class="btn btn-secondary" data-dismiss="modal">Tutup</a>
-                                                                    <!-- <a href="#" class="btn btn-primary">Ubah</a> -->
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                  <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalHapus">Hapus</a>
-                                                  <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Yakin Menghapus analisa?</h5>
-                                                                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <p>Semua data tidak bisa dikembalikan alias hapus permanen!</p>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <a href="#" class="btn btn-info" data-dismiss="modal">Batal</a>
-                                                                    <a href="#" class="btn btn-danger">Oke</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                  <a href="<?= base_url()?>index.php/Admin_view/hasil_analisa?hasil=<?= $h->id;?>" class="btn btn-primary btn-sm">Detail</a>
+                                                  <!-- <a href="#" class="btn btn-danger btn-sm">Hapus</a> -->
                                                 </td>
                                             </tr>
+                                            <?php
+                                                    $no++;
+                                                }
+                                            ?>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>

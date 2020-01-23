@@ -77,12 +77,22 @@ class DataModel extends CI_Model{
         $query = $this->db->join($table, $condition, $type);
         return $query;
     }
-    function getJoin_hasil(){
-        $query = $this->db->select('*');
-        $query = $this->db->from('hasil_analisa a');
-        $query = $this->db->join('user b', 'b.id = a.id_user','left');
-        $query = $this->db->get();
-        return $query;
+    function getJoin_hasil($id){
+        if($id == null){
+            $query = $this->db->select('*');
+            $query = $this->db->from('hasil_analisa a');
+           // $query = $this->db->join('user b', 'b.id = a.id_user','inner');
+            $query = $this->db->get();
+            return $query;
+        }else{
+            $query = $this->db->select('*');
+            $query = $this->db->from('hasil_analisa a');
+           // $query = $this->db->join('user b', 'b.id = a.id_user','inner');
+            $query =  $this->db->where('a.id_user',$id);
+            $query = $this->db->get();
+            return $query;
+        }
+
     }
 
     function insert($table,$data){

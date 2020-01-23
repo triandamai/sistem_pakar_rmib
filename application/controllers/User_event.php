@@ -14,8 +14,7 @@ class User_event extends CI_Controller {
 
 	public function index()
 	{
-
-		
+		redirect('User_view');		
 	}
 
 	public function login()
@@ -176,7 +175,7 @@ class User_event extends CI_Controller {
 					redirect('User_view/daftar');
 				}
 			}
-			}
+		}
 
 			
 		}
@@ -215,10 +214,22 @@ class User_event extends CI_Controller {
 					if($simpan){
 						//ke table Awal
 						$this->session->set_userdata('analisa_data',$data_session_analisa);
+						$this->session->set_flashdata(
+							'pesan',
+							'<div class="alert alert-success" role="alert">
+								Silahkan Isi data dibawah!
+							</div>'
+						);
 						redirect('User_view/mulai_analisa?tabel=A');
 					}else{
 						//kembali ke isi biodata
 						$this->session->unset_userdata['analisa_data'];
+						$this->session->set_flashdata(
+							'pesan',
+							'<div class="alert alert-danger" role="alert">
+								Gagal menyimpan data! Coba lagi
+							</div>'
+						);
 						redirect('User_view/isi_data_analisa');
 					}
 		}else{
@@ -226,6 +237,7 @@ class User_event extends CI_Controller {
 			$idsub = $this->input->post('id_sub');
 			
 			$data = array();
+			$jumlah = array();
 
 			$index= 0;
 		
@@ -243,10 +255,20 @@ class User_event extends CI_Controller {
 						
 					)
 				);
-
+				array_push($jumlah,$val[$index]);
 				$index++;
 			}
-			//die(json_encode($data));
+
+			if(!array_sum($jumlah) == 78){
+				$this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-danger" role="alert">
+						Data ang diinputkan tidak valid!
+					</div>'
+				);
+				redirect('User_view/mulai_analisa?tabel='.$tabel);
+			}else{
+				//die(json_encode($data));
 			$simpan = $this->DataModel->insert_many('detail_analisa',$data);
 			if($simpan){
 				if($tabel == "A"){
@@ -278,11 +300,26 @@ class User_event extends CI_Controller {
 					redirect('User_view/hasil_analisa');
 				}else{
 					//ke tabel tidak ada
+					$this->session->set_flashdata(
+						'pesan',
+						'<div class="alert alert-danger" role="alert">
+							Data tidak valid! Coba lagi
+						</div>'
+					);
 					redirect('User_view/isi_data_analisa');
 				}
 			}else{
-
+				$this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-danger" role="alert">
+						Gagal mentimpan data! Coba lagi
+					</div>'
+				);
+				redirect('User_view/mulai_analisa?tabel='.$tabel);
 			}
+		}
+			
+			
 			
 		}
 		

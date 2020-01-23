@@ -5,7 +5,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">E-commerce Product Invoice </h2>
+                                <h2 class="pageheader-title"><?= $section_title;?> </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -23,9 +23,10 @@
                     <!-- ============================================================== -->
                     <div class="row">
                         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <?= $this->session->flashdata('pesan'); ?>
                             <div class="card">
                                 <div class="card-header p-4">
-                                     <a class="pt-2 d-inline-block" href="index.html">Hasil Analisa</a>
+                                     <a class="pt-2 d-inline-block" href="#">Hasil Analisa</a>
                                    
                                     <div class="float-right"> <h3 class="mb-0">Id Analisa :<?= $hasil_analisa->id;?> </h3>
                                     Date: </div>
