@@ -235,13 +235,14 @@ class Admin_view extends CI_Controller {
         $data['jml'] = $jml;
        // die(json_encode($data));
                 $data['judul'] = "Admin | Hasil";
+                $data['back'] = "Admin_view/data_analisa";
                 $data['nama_section'] = "Home";
                 $data['title_section'] = "Selamat Datang!";
                 $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
                 $this->load->view('header', $data);
-                $this->load->view('user/nav-top', $data);
+                $this->load->view('Admin/nav-top', $data);
                 $this->load->view('hasil_analisa',$data);
-                $this->load->view('user/nav-bottom', $data);
+                $this->load->view('Admin/nav-bottom', $data);
                 $this->load->view('footer', $data);
     }else{
         //analisa tidak valid

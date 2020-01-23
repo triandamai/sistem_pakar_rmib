@@ -7,14 +7,14 @@
                         
                     <?= $this->session->flashdata('pesan'); ?>
                         <div class="page-header">
-                            <h2 class="pageheader-title">Data Tables</h2>
-                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <h2 class="pageheader-title">Data Hasil Analisa</h2>
+                            <p class="pageheader-text">Menampilkan data analisa yang dibuat oleh user.</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+                                        <li class="breadcrumb-item"><a href="<?= base_url()?>index.php/Admin_view" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Analisa</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Data Analisa</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -32,8 +32,8 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="mb-0">Data Tables - Print, Excel, CSV, PDF Buttons</h5>
-                                <p>This example shows DataTables and the Buttons extension being used with the Bootstrap 4 framework providing the styling.</p>
+                                <h5 class="mb-0">Data - Analisa</h5>
+                                <p></p>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

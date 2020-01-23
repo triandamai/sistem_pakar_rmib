@@ -210,6 +210,7 @@ class User_view extends CI_Controller {
         $data['jml'] = $jml;
        // die(json_encode($data));
                 $data['judul'] = "User | Home";
+                $data['back'] = "User_view/data_analisa";
                 $data['nama_section'] = "Home";
                 $data['title_section'] = "Selamat Datang!";
                 $data['subtitle_section'] = "Halaman utama user Sistem Pakar.";
