@@ -78,6 +78,12 @@ class Admin_event extends CI_Controller {
 			);
 			redirect("Admin_view/login");
 			}
+		}else {
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-danger mr-auto">Isi semua form!</div>'
+			);
+			redirect("Admin_view/login");
 		}
 	}
     public function tambah_indikator()
