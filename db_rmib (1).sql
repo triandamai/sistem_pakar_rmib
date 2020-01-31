@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jan 2020 pada 08.32
+-- Waktu pembuatan: 31 Jan 2020 pada 07.54
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 7.2.5
 
@@ -43,7 +43,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nama`, `email`, `username`, `password`, `created_at`, `updated_at`) VALUES
-('adsfhgjhkdfsdf', 'Trian', 'triannurizkillah@gmail.com', 'Trian', 'asdf1998Buka', '2020-01-22', '2020-01-23');
+('adsfhgjhkdfsdf', 'Trian', 'triannurizkillah@gmail.com', 'Trian', 'asdf1998Buka', '2020-01-22', '2020-01-31');
 
 -- --------------------------------------------------------
 
@@ -499,7 +499,224 @@ INSERT INTO `detail_analisa` (`id`, `id_user`, `id_hasil`, `id_sub`, `no_urut`, 
 (779, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_004', '120', 9, 'I', 4, '2020-01-23', '2020-01-23'),
 (780, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_004', '121', 10, 'I', 3, '2020-01-23', '2020-01-23'),
 (781, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_004', '122', 11, 'I', 2, '2020-01-23', '2020-01-23'),
-(782, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_004', '123', 12, 'I', 1, '2020-01-23', '2020-01-23');
+(782, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_004', '123', 12, 'I', 1, '2020-01-23', '2020-01-23'),
+(783, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '124', 1, 'A', 7, '2020-01-23', '2020-01-23'),
+(784, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '125', 2, 'A', 5, '2020-01-23', '2020-01-23'),
+(785, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '126', 3, 'A', 4, '2020-01-23', '2020-01-23'),
+(786, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '127', 4, 'A', 8, '2020-01-23', '2020-01-23'),
+(787, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '128', 5, 'A', 9, '2020-01-23', '2020-01-23'),
+(788, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '129', 6, 'A', 10, '2020-01-23', '2020-01-23'),
+(789, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '130', 7, 'A', 1, '2020-01-23', '2020-01-23'),
+(790, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '131', 8, 'A', 2, '2020-01-23', '2020-01-23'),
+(791, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '132', 9, 'A', 3, '2020-01-23', '2020-01-23'),
+(792, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '133', 10, 'A', 6, '2020-01-23', '2020-01-23'),
+(793, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '134', 11, 'A', 11, '2020-01-23', '2020-01-23'),
+(794, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '135', 12, 'A', 12, '2020-01-23', '2020-01-23'),
+(795, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '136', 1, 'B', 9, '2020-01-23', '2020-01-23'),
+(796, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '137', 2, 'B', 10, '2020-01-23', '2020-01-23'),
+(797, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '138', 3, 'B', 11, '2020-01-23', '2020-01-23'),
+(798, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '139', 4, 'B', 12, '2020-01-23', '2020-01-23'),
+(799, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '140', 5, 'B', 1, '2020-01-23', '2020-01-23'),
+(800, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '141', 6, 'B', 2, '2020-01-23', '2020-01-23'),
+(801, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '142', 7, 'B', 3, '2020-01-23', '2020-01-23'),
+(802, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '143', 8, 'B', 4, '2020-01-23', '2020-01-23'),
+(803, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '144', 9, 'B', 5, '2020-01-23', '2020-01-23'),
+(804, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '145', 10, 'B', 6, '2020-01-23', '2020-01-23'),
+(805, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '146', 11, 'B', 7, '2020-01-23', '2020-01-23'),
+(806, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '147', 12, 'B', 8, '2020-01-23', '2020-01-23'),
+(807, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '148', 1, 'C', 5, '2020-01-23', '2020-01-23'),
+(808, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '149', 2, 'C', 6, '2020-01-23', '2020-01-23'),
+(809, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '150', 3, 'C', 1, '2020-01-23', '2020-01-23'),
+(810, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '151', 4, 'C', 2, '2020-01-23', '2020-01-23'),
+(811, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '152', 5, 'C', 7, '2020-01-23', '2020-01-23'),
+(812, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '153', 6, 'C', 8, '2020-01-23', '2020-01-23'),
+(813, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '154', 7, 'C', 3, '2020-01-23', '2020-01-23'),
+(814, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '155', 8, 'C', 4, '2020-01-23', '2020-01-23'),
+(815, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '156', 9, 'C', 10, '2020-01-23', '2020-01-23'),
+(816, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '157', 10, 'C', 12, '2020-01-23', '2020-01-23'),
+(817, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '158', 11, 'C', 11, '2020-01-23', '2020-01-23'),
+(818, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '159', 12, 'C', 9, '2020-01-23', '2020-01-23'),
+(819, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '160', 1, 'D', 3, '2020-01-23', '2020-01-23'),
+(820, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '161', 2, 'D', 1, '2020-01-23', '2020-01-23');
+INSERT INTO `detail_analisa` (`id`, `id_user`, `id_hasil`, `id_sub`, `no_urut`, `tabel`, `value`, `created_at`, `updated_at`) VALUES
+(821, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '162', 3, 'D', 7, '2020-01-23', '2020-01-23'),
+(822, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '163', 4, 'D', 5, '2020-01-23', '2020-01-23'),
+(823, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '164', 5, 'D', 9, '2020-01-23', '2020-01-23'),
+(824, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '165', 6, 'D', 11, '2020-01-23', '2020-01-23'),
+(825, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '166', 7, 'D', 2, '2020-01-23', '2020-01-23'),
+(826, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '167', 8, 'D', 4, '2020-01-23', '2020-01-23'),
+(827, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '168', 9, 'D', 6, '2020-01-23', '2020-01-23'),
+(828, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '169', 10, 'D', 8, '2020-01-23', '2020-01-23'),
+(829, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '170', 11, 'D', 10, '2020-01-23', '2020-01-23'),
+(830, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '171', 12, 'D', 12, '2020-01-23', '2020-01-23'),
+(831, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '172', 1, 'E', 1, '2020-01-23', '2020-01-23'),
+(832, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '173', 2, 'E', 4, '2020-01-23', '2020-01-23'),
+(833, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '174', 3, 'E', 3, '2020-01-23', '2020-01-23'),
+(834, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '175', 4, 'E', 12, '2020-01-23', '2020-01-23'),
+(835, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '176', 5, 'E', 11, '2020-01-23', '2020-01-23'),
+(836, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '177', 6, 'E', 10, '2020-01-23', '2020-01-23'),
+(837, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '178', 7, 'E', 8, '2020-01-23', '2020-01-23'),
+(838, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '179', 8, 'E', 7, '2020-01-23', '2020-01-23'),
+(839, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '180', 9, 'E', 6, '2020-01-23', '2020-01-23'),
+(840, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '181', 10, 'E', 2, '2020-01-23', '2020-01-23'),
+(841, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '182', 11, 'E', 5, '2020-01-23', '2020-01-23'),
+(842, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '183', 12, 'E', 9, '2020-01-23', '2020-01-23'),
+(843, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '184', 1, 'F', 7, '2020-01-23', '2020-01-23'),
+(844, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '185', 2, 'F', 9, '2020-01-23', '2020-01-23'),
+(845, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '186', 3, 'F', 10, '2020-01-23', '2020-01-23'),
+(846, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '187', 4, 'F', 11, '2020-01-23', '2020-01-23'),
+(847, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '188', 5, 'F', 12, '2020-01-23', '2020-01-23'),
+(848, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '189', 6, 'F', 1, '2020-01-23', '2020-01-23'),
+(849, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '190', 7, 'F', 2, '2020-01-23', '2020-01-23'),
+(850, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '191', 8, 'F', 3, '2020-01-23', '2020-01-23'),
+(851, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '192', 9, 'F', 5, '2020-01-23', '2020-01-23'),
+(852, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '193', 10, 'F', 6, '2020-01-23', '2020-01-23'),
+(853, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '194', 11, 'F', 8, '2020-01-23', '2020-01-23'),
+(854, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '195', 12, 'F', 4, '2020-01-23', '2020-01-23'),
+(855, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '196', 1, 'G', 6, '2020-01-23', '2020-01-23'),
+(856, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '197', 2, 'G', 8, '2020-01-23', '2020-01-23'),
+(857, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '198', 3, 'G', 9, '2020-01-23', '2020-01-23'),
+(858, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '199', 4, 'G', 1, '2020-01-23', '2020-01-23'),
+(859, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '200', 5, 'G', 2, '2020-01-23', '2020-01-23'),
+(860, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '201', 6, 'G', 4, '2020-01-23', '2020-01-23'),
+(861, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '202', 7, 'G', 5, '2020-01-23', '2020-01-23'),
+(862, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '203', 8, 'G', 3, '2020-01-23', '2020-01-23'),
+(863, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '204', 9, 'G', 7, '2020-01-23', '2020-01-23'),
+(864, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '205', 10, 'G', 10, '2020-01-23', '2020-01-23'),
+(865, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '206', 11, 'G', 11, '2020-01-23', '2020-01-23'),
+(866, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '207', 12, 'G', 12, '2020-01-23', '2020-01-23'),
+(867, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '208', 1, 'H', 10, '2020-01-23', '2020-01-23'),
+(868, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '209', 2, 'H', 11, '2020-01-23', '2020-01-23'),
+(869, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '210', 3, 'H', 9, '2020-01-23', '2020-01-23'),
+(870, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '211', 4, 'H', 8, '2020-01-23', '2020-01-23'),
+(871, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '212', 5, 'H', 1, '2020-01-23', '2020-01-23'),
+(872, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '213', 6, 'H', 2, '2020-01-23', '2020-01-23'),
+(873, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '214', 7, 'H', 3, '2020-01-23', '2020-01-23'),
+(874, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '215', 8, 'H', 4, '2020-01-23', '2020-01-23'),
+(875, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '216', 9, 'H', 5, '2020-01-23', '2020-01-23'),
+(876, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '217', 10, 'H', 7, '2020-01-23', '2020-01-23'),
+(877, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '218', 11, 'H', 6, '2020-01-23', '2020-01-23'),
+(878, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '219', 12, 'H', 12, '2020-01-23', '2020-01-23'),
+(879, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '220', 1, 'I', 4, '2020-01-23', '2020-01-23'),
+(880, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '221', 2, 'I', 5, '2020-01-23', '2020-01-23'),
+(881, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '222', 3, 'I', 6, '2020-01-23', '2020-01-23'),
+(882, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '223', 4, 'I', 7, '2020-01-23', '2020-01-23'),
+(883, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '224', 5, 'I', 8, '2020-01-23', '2020-01-23'),
+(884, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '225', 6, 'I', 9, '2020-01-23', '2020-01-23'),
+(885, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '226', 7, 'I', 10, '2020-01-23', '2020-01-23'),
+(886, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '227', 8, 'I', 11, '2020-01-23', '2020-01-23'),
+(887, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '228', 9, 'I', 12, '2020-01-23', '2020-01-23'),
+(888, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '229', 10, 'I', 3, '2020-01-23', '2020-01-23'),
+(889, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '230', 11, 'I', 2, '2020-01-23', '2020-01-23'),
+(890, '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'ANALISA_006', '231', 12, 'I', 1, '2020-01-23', '2020-01-23'),
+(891, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '16', 1, 'A', 1, '2020-01-31', '2020-01-31'),
+(892, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '17', 2, 'A', 2, '2020-01-31', '2020-01-31'),
+(893, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '18', 3, 'A', 3, '2020-01-31', '2020-01-31'),
+(894, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '19', 4, 'A', 4, '2020-01-31', '2020-01-31'),
+(895, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '20', 5, 'A', 5, '2020-01-31', '2020-01-31'),
+(896, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '21', 6, 'A', 6, '2020-01-31', '2020-01-31'),
+(897, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '22', 7, 'A', 7, '2020-01-31', '2020-01-31'),
+(898, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '23', 8, 'A', 8, '2020-01-31', '2020-01-31'),
+(899, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '24', 9, 'A', 9, '2020-01-31', '2020-01-31'),
+(900, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '25', 10, 'A', 10, '2020-01-31', '2020-01-31'),
+(901, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '26', 11, 'A', 11, '2020-01-31', '2020-01-31'),
+(902, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '27', 12, 'A', 12, '2020-01-31', '2020-01-31'),
+(903, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '28', 1, 'B', 1, '2020-01-31', '2020-01-31'),
+(904, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '29', 2, 'B', 2, '2020-01-31', '2020-01-31'),
+(905, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '30', 3, 'B', 3, '2020-01-31', '2020-01-31'),
+(906, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '31', 4, 'B', 4, '2020-01-31', '2020-01-31'),
+(907, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '32', 5, 'B', 5, '2020-01-31', '2020-01-31'),
+(908, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '33', 6, 'B', 6, '2020-01-31', '2020-01-31'),
+(909, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '34', 7, 'B', 7, '2020-01-31', '2020-01-31'),
+(910, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '35', 8, 'B', 8, '2020-01-31', '2020-01-31'),
+(911, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '36', 9, 'B', 9, '2020-01-31', '2020-01-31'),
+(912, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '37', 10, 'B', 10, '2020-01-31', '2020-01-31'),
+(913, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '38', 11, 'B', 11, '2020-01-31', '2020-01-31'),
+(914, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '39', 12, 'B', 12, '2020-01-31', '2020-01-31'),
+(915, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '40', 1, 'C', 1, '2020-01-31', '2020-01-31'),
+(916, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '41', 2, 'C', 2, '2020-01-31', '2020-01-31'),
+(917, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '42', 3, 'C', 4, '2020-01-31', '2020-01-31'),
+(918, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '43', 4, 'C', 3, '2020-01-31', '2020-01-31'),
+(919, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '44', 5, 'C', 5, '2020-01-31', '2020-01-31'),
+(920, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '45', 6, 'C', 6, '2020-01-31', '2020-01-31'),
+(921, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '46', 7, 'C', 7, '2020-01-31', '2020-01-31'),
+(922, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '47', 8, 'C', 8, '2020-01-31', '2020-01-31'),
+(923, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '48', 9, 'C', 9, '2020-01-31', '2020-01-31'),
+(924, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '49', 10, 'C', 10, '2020-01-31', '2020-01-31'),
+(925, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '50', 11, 'C', 11, '2020-01-31', '2020-01-31'),
+(926, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '51', 12, 'C', 12, '2020-01-31', '2020-01-31'),
+(927, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '52', 1, 'D', 1, '2020-01-31', '2020-01-31'),
+(928, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '53', 2, 'D', 2, '2020-01-31', '2020-01-31'),
+(929, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '54', 3, 'D', 3, '2020-01-31', '2020-01-31'),
+(930, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '55', 4, 'D', 4, '2020-01-31', '2020-01-31'),
+(931, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '56', 5, 'D', 5, '2020-01-31', '2020-01-31'),
+(932, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '57', 6, 'D', 6, '2020-01-31', '2020-01-31'),
+(933, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '58', 7, 'D', 7, '2020-01-31', '2020-01-31'),
+(934, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '59', 8, 'D', 8, '2020-01-31', '2020-01-31'),
+(935, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '60', 9, 'D', 9, '2020-01-31', '2020-01-31'),
+(936, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '61', 10, 'D', 10, '2020-01-31', '2020-01-31'),
+(937, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '62', 11, 'D', 11, '2020-01-31', '2020-01-31'),
+(938, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '63', 12, 'D', 12, '2020-01-31', '2020-01-31'),
+(939, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '64', 1, 'E', 1, '2020-01-31', '2020-01-31'),
+(940, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '65', 2, 'E', 2, '2020-01-31', '2020-01-31'),
+(941, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '66', 3, 'E', 3, '2020-01-31', '2020-01-31'),
+(942, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '67', 4, 'E', 4, '2020-01-31', '2020-01-31'),
+(943, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '68', 5, 'E', 5, '2020-01-31', '2020-01-31'),
+(944, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '69', 6, 'E', 6, '2020-01-31', '2020-01-31'),
+(945, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '70', 7, 'E', 7, '2020-01-31', '2020-01-31'),
+(946, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '71', 8, 'E', 8, '2020-01-31', '2020-01-31'),
+(947, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '72', 9, 'E', 9, '2020-01-31', '2020-01-31'),
+(948, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '73', 10, 'E', 10, '2020-01-31', '2020-01-31'),
+(949, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '74', 11, 'E', 11, '2020-01-31', '2020-01-31'),
+(950, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '75', 12, 'E', 12, '2020-01-31', '2020-01-31'),
+(951, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '76', 1, 'F', 1, '2020-01-31', '2020-01-31'),
+(952, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '77', 2, 'F', 2, '2020-01-31', '2020-01-31'),
+(953, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '78', 3, 'F', 3, '2020-01-31', '2020-01-31'),
+(954, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '79', 4, 'F', 4, '2020-01-31', '2020-01-31'),
+(955, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '80', 5, 'F', 5, '2020-01-31', '2020-01-31'),
+(956, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '81', 6, 'F', 6, '2020-01-31', '2020-01-31'),
+(957, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '82', 7, 'F', 7, '2020-01-31', '2020-01-31'),
+(958, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '83', 8, 'F', 8, '2020-01-31', '2020-01-31'),
+(959, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '84', 9, 'F', 9, '2020-01-31', '2020-01-31'),
+(960, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '85', 10, 'F', 10, '2020-01-31', '2020-01-31'),
+(961, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '86', 11, 'F', 11, '2020-01-31', '2020-01-31'),
+(962, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '87', 12, 'F', 12, '2020-01-31', '2020-01-31'),
+(963, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '88', 1, 'G', 1, '2020-01-31', '2020-01-31'),
+(964, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '89', 2, 'G', 2, '2020-01-31', '2020-01-31'),
+(965, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '90', 3, 'G', 3, '2020-01-31', '2020-01-31'),
+(966, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '91', 4, 'G', 4, '2020-01-31', '2020-01-31'),
+(967, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '92', 5, 'G', 5, '2020-01-31', '2020-01-31'),
+(968, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '93', 6, 'G', 6, '2020-01-31', '2020-01-31'),
+(969, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '94', 7, 'G', 7, '2020-01-31', '2020-01-31'),
+(970, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '95', 8, 'G', 8, '2020-01-31', '2020-01-31'),
+(971, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '96', 9, 'G', 9, '2020-01-31', '2020-01-31'),
+(972, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '97', 10, 'G', 10, '2020-01-31', '2020-01-31'),
+(973, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '98', 11, 'G', 11, '2020-01-31', '2020-01-31'),
+(974, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '99', 12, 'G', 12, '2020-01-31', '2020-01-31'),
+(975, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '100', 1, 'H', 1, '2020-01-31', '2020-01-31'),
+(976, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '101', 2, 'H', 2, '2020-01-31', '2020-01-31'),
+(977, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '102', 3, 'H', 3, '2020-01-31', '2020-01-31'),
+(978, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '103', 4, 'H', 4, '2020-01-31', '2020-01-31'),
+(979, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '104', 5, 'H', 5, '2020-01-31', '2020-01-31'),
+(980, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '105', 6, 'H', 6, '2020-01-31', '2020-01-31'),
+(981, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '106', 7, 'H', 7, '2020-01-31', '2020-01-31'),
+(982, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '107', 8, 'H', 8, '2020-01-31', '2020-01-31'),
+(983, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '108', 9, 'H', 9, '2020-01-31', '2020-01-31'),
+(984, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '109', 10, 'H', 10, '2020-01-31', '2020-01-31'),
+(985, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '110', 11, 'H', 11, '2020-01-31', '2020-01-31'),
+(986, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '111', 12, 'H', 12, '2020-01-31', '2020-01-31'),
+(987, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '112', 1, 'I', 1, '2020-01-31', '2020-01-31'),
+(988, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '113', 2, 'I', 2, '2020-01-31', '2020-01-31'),
+(989, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '114', 3, 'I', 3, '2020-01-31', '2020-01-31'),
+(990, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '115', 4, 'I', 4, '2020-01-31', '2020-01-31'),
+(991, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '116', 5, 'I', 5, '2020-01-31', '2020-01-31'),
+(992, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '117', 6, 'I', 6, '2020-01-31', '2020-01-31'),
+(993, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '118', 7, 'I', 7, '2020-01-31', '2020-01-31'),
+(994, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '119', 8, 'I', 8, '2020-01-31', '2020-01-31'),
+(995, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '120', 9, 'I', 9, '2020-01-31', '2020-01-31'),
+(996, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '121', 10, 'I', 10, '2020-01-31', '2020-01-31'),
+(997, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '122', 11, 'I', 11, '2020-01-31', '2020-01-31'),
+(998, '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'ANALISA_007', '123', 12, 'I', 12, '2020-01-31', '2020-01-31');
 
 -- --------------------------------------------------------
 
@@ -511,7 +728,6 @@ CREATE TABLE `hasil_analisa` (
   `id` varchar(36) NOT NULL,
   `id_user` varchar(36) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `TTL` varchar(255) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `hasil` varchar(36) DEFAULT NULL,
   `created_at` date NOT NULL,
@@ -522,12 +738,14 @@ CREATE TABLE `hasil_analisa` (
 -- Dumping data untuk tabel `hasil_analisa`
 --
 
-INSERT INTO `hasil_analisa` (`id`, `id_user`, `nama`, `TTL`, `jenis_kelamin`, `hasil`, `created_at`, `updated_at`) VALUES
-('ANALISA_002', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Damai', 'Purwokerto,17 Agus 2019', 'L', 'SELESAI', '2020-01-23', '2020-01-23'),
-('ANALISA_001', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Trian', 'Purwokerto, 16 sep 2019', 'L', 'SELESAI', '2020-01-23', '2020-01-23'),
-('ANALISA_003', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Desi', 'Purwokerto, 12 Des 2019', 'P', 'SELESAI', '2020-01-23', '2020-01-23'),
-('ANALISA_004', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Rafly', 'Klahang,16 august 2019', 'L', 'SELESAI', '2020-01-23', '2020-01-23'),
-('ANALISA_005', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'trian', 'pwt ', 'L', NULL, '2020-01-23', '2020-01-23');
+INSERT INTO `hasil_analisa` (`id`, `id_user`, `nama`, `jenis_kelamin`, `hasil`, `created_at`, `updated_at`) VALUES
+('ANALISA_002', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Damai', 'L', 'SELESAI', '2020-01-23', '2020-01-23'),
+('ANALISA_001', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Trian', 'L', 'SELESAI', '2020-01-23', '2020-01-23'),
+('ANALISA_003', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Desi', 'P', 'SELESAI', '2020-01-23', '2020-01-23'),
+('ANALISA_004', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Rafly', 'L', 'SELESAI', '2020-01-23', '2020-01-23'),
+('ANALISA_005', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'trian', 'L', NULL, '2020-01-23', '2020-01-23'),
+('ANALISA_006', '063092fa-3db6-11ea-bbfd-e03f4931b17e', 'vinda', 'P', 'SELESAI', '2020-01-23', '2020-01-23'),
+('ANALISA_007', '5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Data', 'L', 'SELESAI', '2020-01-31', '2020-01-31');
 
 -- --------------------------------------------------------
 
@@ -539,6 +757,7 @@ CREATE TABLE `indikator` (
   `id` varchar(36) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `no_urut` int(2) NOT NULL,
+  `keterangan` text NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -547,19 +766,19 @@ CREATE TABLE `indikator` (
 -- Dumping data untuk tabel `indikator`
 --
 
-INSERT INTO `indikator` (`id`, `nama`, `no_urut`, `created_at`, `updated_at`) VALUES
-('I002', 'Mechanical', 2, '2020-01-21', '2020-01-22'),
-('I001', 'Outdoor', 1, '2020-01-20', '2020-01-22'),
-('I003', 'Comeputational', 3, '2020-01-22', '2020-01-22'),
-('I004', 'Scientific', 4, '2020-01-22', '2020-01-22'),
-('I005', 'Personal Contact', 5, '2020-01-22', '2020-01-22'),
-('I006', 'Aesthetic', 6, '2020-01-22', '2020-01-22'),
-('I007', 'Literaly', 7, '2020-01-22', '2020-01-22'),
-('I008', 'Musical', 8, '2020-01-22', '2020-01-22'),
-('I009', 'Sosial Service', 9, '2020-01-22', '2020-01-22'),
-('I010', 'chenical', 10, '2020-01-22', '2020-01-22'),
-('I011', 'Practical', 11, '2020-01-22', '2020-01-22'),
-('I012', 'Medical', 12, '2020-01-22', '2020-01-22');
+INSERT INTO `indikator` (`id`, `nama`, `no_urut`, `keterangan`, `created_at`, `updated_at`) VALUES
+('I002', 'Mechanical', 2, 'Pekerjaan yang berhubungan dengan mesin, alat-alat dan daya mekanik.Untuk laki-laki: insinyur sipil, montir, pembuat arloji, tukang las. Untuk wanita: ahli kacamata, petugas mesin sulam, ahli reparasi permata, ahli reparasi jam.', '2020-01-21', '2020-01-31'),
+('I001', 'Outdoor', 1, 'Pekerjaan yang aktifitasnya dilakukan diluar atau di lapanagn terbuka. Untuk laki-laki: petani, juru ukur, nelayan, supir. Untuk wanita: ahli pertamanan, peternak, petani bunga dan tukang kebun', '2020-01-20', '2020-01-31'),
+('I003', 'Comeputational', 3, 'Pekerjaan yang berhubungan dengan angka-angka. Untuk laki-laki: akuntan, auditor, kasir, petugas pajak. Untuk wanita: pegawai urusan gaji, juru bayar, pegawai pajak, guru ilmu pasti.', '2020-01-22', '2020-01-31'),
+('I004', 'Scientific', 4, 'Pekerjaan yang dapat disebut sebagai keaktifan dalam hal analisa dan penyelidikan, eksperimen, kimia dan ilmu pengetahuan pada umumnya. Untuk laki-laki: ilmuwan, ahli biologi, ahli astronomi dan insinyur kimia industri.', '2020-01-22', '2020-01-31'),
+('I005', 'Personal Contact', 5, 'Pekerjaan yang dapat disebut sebagai keaktifan dalam hal analisa dan penyelidikan, eksperimen, kimia dan ilmu pengetahuan pada umumnya. Untuk laki-laki: ilmuwan, ahli biologi, ahli astronomi dan insinyur kimia industri.', '2020-01-22', '2020-01-31'),
+('I006', 'Aesthetic', 6, 'Pekerjaan yang berhubungan dengan hal-hal yang bersifat seni dan menciptakan sesuatu. Untuk laki-laki: seniman, artis, arsitek, decorator, fotografer dan piñata panggung. Untuk wanita: seniwati, guru kesenian, artis, piñata panggung.', '2020-01-22', '2020-01-31'),
+('I007', 'Literaly', 7, 'Pekerjaan yang berhubungan dengan buku-buku, kegiatan membaca dan mengarang. Untuk laki-laki: wartawan, pengarang, penulis scenario, ahli perpustakaan, penulis majalah. Untuk wanita: wartawan, kritikus buku, penyair, penulis sandiwara radio.', '2020-01-22', '2020-01-31'),
+('I008', 'Musical', 8, 'Minat memainkan alat-alat music atau untuk mendengarkan orang lain, bernyanyi atau membaca sesuatu yang berhubungan music. Untuk laki-laki: pianis konser, komponis, pemain organ, ahli pustaka dan pramuniaga took music. Untuk wanita: pemain organ, guru music, komponis, pianis konser, pramuniaga took music.', '2020-01-22', '2020-01-31'),
+('I009', 'Sosial Service', 9, 'Minat terhadap kesejahteraan penduduk dengan keinginan untuk menolong dan membimbing atau menasehati tentang problem dan kesulitan mereka. Keinginan untuk mengerti orang lain, dan mempunyai ide yang besar atau kuat tentang pelayanan. Untuk laki-laki: guru SD, psikolog pendidikan, kepala sekolah, penyebar agama, petugas palang merah. Untuk wanita: guru SD, psikolog pendidikan, petugas kesejahteraan social, ahli penyuluh jabatan, petughas palang merah.', '2020-01-22', '2020-01-31'),
+('I010', 'chenical', 10, 'Minat terhadap tugas-tugas rutin yang menuntut ketepatan dan ketelitian. Untuk laki-laki: manajer bank, petugas arsip, petugas pengiriman barang, pegawai kantor, petugas pos, petugas ekspedisi(surat). Untuk wanita: sekertaris pribadi, juru ketik, penulis steno, pegawai kantor, penyusun arsip.', '2020-01-22', '2020-01-31'),
+('I011', 'Practical', 11, 'Minat terhadap pekerjaan-pekerjaan yang praktis, karya pertukangan, dan yang memerlukan keterampilan. Untuk laki-laki: tukang kayu, ahli bangunan, ahli mebel, tukang cat, tukan batu, tukang sepatu. Untuk wanita: ahli piñata rambut, tukang bungkus coklat, tukang binatu, penjahit, petugas mesin sulam, juru masak.', '2020-01-22', '2020-01-31'),
+('I012', 'Medical', 12, 'Minat terhadap pengobatan, mengurangi akibat dari penyakit, penyembuhan, dan di dalam bidang medis, serta terhadap hal-hal biologis pada umumnya. Untuk laki-laki: dokter, ahli bedah, dokter hewan, ahli farmasi, dokter gigi, ahli kacamata, ahli rontgen. Untuk wanita: dokter, ahli bedah, dokter hewan, pelatih rehabilitasi pasien, perawat orang tua.', '2020-01-22', '2020-01-31');
 
 -- --------------------------------------------------------
 
@@ -814,6 +1033,7 @@ CREATE TABLE `user` (
   `username` varchar(255) NOT NULL DEFAULT 'userdefault',
   `password` varchar(255) NOT NULL DEFAULT 'userdefault',
   `status` enum('AKTIF','TIDAK AKTIF') NOT NULL,
+  `jk` enum('L','P') NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -822,10 +1042,11 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `email`, `nohp`, `username`, `password`, `status`, `created_at`, `updated_at`) VALUES
-('a215503b-39a9-11ea-9ff9-e03f4931b17e', 'Trian', 'aisyah_ajjh94@yahoo.co.id', '', '17.12.0095', '$2a$08$K0ZkNK/OFGL2a6oRCV8QrucmD.LMhTOWPLnA1s..N96KH8pEcmeS.', 'AKTIF', '2020-01-18', '2020-01-20'),
-('5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Data', 'data@gmail.com', '', 'data', '$2a$08$QazXFlbegzi9HLtndlVOCeATdftuYMnopkASNYU.kxNYnMZ8MpOYa', 'AKTIF', '2020-01-20', '2020-01-23'),
-('c19e12f3-3dac-11ea-bbfd-e03f4931b17e', 'Bella', 'megabella54@gmail.com', '', 'bellamega', '$2a$08$Y2USyM71Q1w7pTO6wVFnVe.uBZjhwUBxCLAeXI8gzkLW./55F18pO', 'AKTIF', '2020-01-23', '2020-01-23');
+INSERT INTO `user` (`id`, `nama`, `email`, `nohp`, `username`, `password`, `status`, `jk`, `created_at`, `updated_at`) VALUES
+('a215503b-39a9-11ea-9ff9-e03f4931b17e', 'Trian', 'aisyah_ajjh94@yahoo.co.id', '', '17.12.0095', '$2a$08$K0ZkNK/OFGL2a6oRCV8QrucmD.LMhTOWPLnA1s..N96KH8pEcmeS.', 'AKTIF', 'L', '2020-01-18', '2020-01-30'),
+('5f61843a-3b8a-11ea-9b3d-e03f4931b17e', 'Data', 'data@gmail.com', '', 'data', '$2a$08$QazXFlbegzi9HLtndlVOCeATdftuYMnopkASNYU.kxNYnMZ8MpOYa', 'AKTIF', 'L', '2020-01-20', '2020-01-31'),
+('c19e12f3-3dac-11ea-bbfd-e03f4931b17e', 'Bella', 'megabella54@gmail.com', '', 'bellamega', '$2a$08$Y2USyM71Q1w7pTO6wVFnVe.uBZjhwUBxCLAeXI8gzkLW./55F18pO', 'AKTIF', 'L', '2020-01-23', '2020-01-23'),
+('063092fa-3db6-11ea-bbfd-e03f4931b17e', 'Vinda', 'v@gmail.com', '', 'vinda', '$2a$08$49BJUtQi3EtI/XKqBdzHtObVmUxzrU3hohLQ3tVsj6Ep6uBc0XFri', 'AKTIF', 'L', '2020-01-23', '2020-01-23');
 
 --
 -- Indexes for dumped tables
@@ -875,7 +1096,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `detail_analisa`
 --
 ALTER TABLE `detail_analisa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=783;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=999;
 
 --
 -- AUTO_INCREMENT untuk tabel `sub_indikator`
