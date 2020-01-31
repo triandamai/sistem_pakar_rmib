@@ -90,6 +90,7 @@ class Admin_event extends CI_Controller {
 	{
 		$nama = $this->input->post("nama");
 		$urut = $this->input->post("urut");
+		$ket = $this->input->post("ket");
 
 		
 		$cek = $this->DataModel->getWhere("no_urut",$urut);
@@ -111,6 +112,7 @@ class Admin_event extends CI_Controller {
 					"id"=> "I".$kode,
 					"nama" => $nama,
 					"no_urut" => $urut,
+					"keterangan" => $ket,
 					"created_at" => date("Y-m-d H:i:s"),
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
@@ -141,12 +143,14 @@ class Admin_event extends CI_Controller {
 	{
 		$nama = $this->input->post("nama");
 		$urut = $this->input->post("urut");
+		$ket = $this->input->post("ket");
 		$id = $this->input->post("id");
 
 
 				$data = array(
 					"nama" => $nama,
 					"no_urut" => $urut,
+					"keterangan" => $ket,
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
 				//die(json_encode($id));

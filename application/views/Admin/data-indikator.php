@@ -77,6 +77,7 @@
                                                                 data-id="<?= $i->id;?>"
                                                                 data-urut="<?= $i->no_urut;?>"
                                                                 data-nama="<?= $i->nama;?>" 
+                                                                data-ket="<?= $i->keterangan;?>"
                                                                 data-target="#modalUbahIndikator">Ubah</a>
                                                                 <a 
                                                                 href="#" 
@@ -107,7 +108,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="subindikator" role="tabpanel" aria-labelledby="profile-tab-simple">
                                         <div class="table-responsive">
-                                            <table id="example" class="table table-striped table-bordered third" style="width:100%">
+                                            <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>No</th>
@@ -206,6 +207,10 @@
                         <option value="12">12</option>
                     </select>
                     </div>
+                    <div class="form-group">
+                        <label for="ket">Keterangan</label>
+                        <textarea class="form-control" required name="ket"  rows="3"></textarea>
+                    </div>
                 </div>
                 </div>
             <div class="modal-footer">
@@ -238,6 +243,10 @@
                     <div class="form-group">
                         <label for="JKs">Nama Indikator</label>
                         <input class="form-control form-control-lg" type="text" name="nama" required="" placeholder="Nama" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="ket">Keterangan</label>
+                        <textarea class="form-control" required name="ket" id="ket" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                     <label for="JKs">No Urut</label>
@@ -445,7 +454,7 @@ $(document).on("click", "#ubahIndikator", function() {
       $('input[name="id"]').val($(this).data('id'));
       $('input[name="nama"]').val($(this).data('nama'));
       $('select[name="urut"]').val($(this).data('urut'));
-     //$('textarea[name="deskripsigejala"]').val($(this).data('deskripsi'));
+     $('textarea[name="ket"]').val($(this).data('ket'));
      
 });
 $(document).on("click", "#ubahSubIndikator", function() {

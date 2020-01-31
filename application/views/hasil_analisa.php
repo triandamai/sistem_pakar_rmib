@@ -37,7 +37,7 @@
                                             <h5 class="mb-3">Biodata Analisa:</h5>                                            
                                             <h3 class="text-dark mb-1"><?= $hasil_analisa->nama;?></h3>
                                          
-                                            <div><?= $hasil_analisa->TTL;?></div>
+                                            <!-- <div><?= $hasil_analisa->TTL;?></div> -->
                                             <div>Jenis Kelamin : <?php if($hasil_analisa->jenis_kelamin == "L"){
                                                 echo "LAKI-LAKI";
                                             }else{
@@ -73,8 +73,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $no =1; $index = 0;
+                                                <?php $no =1; $index = 0; $data = array();
                                                     foreach($indikator as $i){
+                                                      
+                                                    $data[$i->nama][] = $jml[$index];
                                                 ?>
                                                 <tr>
                                                     <td class="center"><?= $no;?></td>
@@ -94,6 +96,9 @@
                                                 $no++;
                                                 $index++;
                                                     }
+                                                  // die(json_encode(array_keys($data,min($data))))
+                                                //   die(json_encode($data));
+
                                                 ?>
                                                 
                                                 
@@ -111,16 +116,33 @@
                                                             <strong class="text-dark">Yang Paling diminati</strong>
                                                         </td>
                                                         <td class="right"><?php 
-                                                        $min = min($jml);
-                                                        $index = array_search($min,$jml);
-                                                        echo $indikator[$index]->nama;
-                                                        ?></td>
+                                                        $valid ="";
+                                                        if($jmlALL == 702){
+                                                            $valid = "Valid";
+                                                        }else{
+                                                            $valid = "Invalid";
+                                                        }
+                                                        
+                                                        $jml2 = $jml;
+                                                        $sort = sort($jml2);
+                                                        $index = array_search($jml2[0],$jml);
+                                                        $index1 = array_search($jml2[1],$jml);
+                                                        $index2 = array_search($jml2[2],$jml);
+                                                        
+                                                        
+                                                        echo $indikator[$index]->nama."<br>";
+                                                        echo $indikator[$index1]->nama."<br>";
+                                                        echo $indikator[$index2]->nama."<br>";
+                                                        
+                                                        ?>
+                                                        </td>
                                                     </tr>
+                                                    
                                                     <tr>
                                                         <td class="left">
                                                             <strong class="text-dark">Status Perhitungan</strong>
                                                         </td>
-                                                        <td class="right">Valid</td>
+                                                        <td class="right"><?= $valid;?></td>
                                                     </tr>
                                                     <tr>
                                                         <td class="left">
@@ -134,9 +156,22 @@
                                             </table>
                                         </div>
                                     </div>
+                                    <p class="mb-0">Keterangan</p>
                                 </div>
                                 <div class="card-footer bg-white">
-                                    <p class="mb-0">2983 Glenview Drive Corpus Christi, TX 78476</p>
+                                    <p class="text-dark"><?= $indikator[$index]->nama;?></p>
+                                    <p class="mb-0"><?= $indikator[$index]->keterangan;?></p>
+                                    <br>
+                                    <p class="text-dark"><?= $indikator[$index1]->nama;?></p>
+                                    <p class="mb-0"><?= $indikator[$index]->keterangan;?></p>
+                                    <br>
+                                    <p class="text-dark"><?= $indikator[$index2]->nama;?></p>
+                                    <p class="mb-0"><?= $indikator[$index]->keterangan;?></p>
+                                </div>
+                               
+                                <div class="card-footer bg-white">
+                                    
+                                    <p class="mb-0">SISTEM PAKAR RMIB</p>
                                 </div>
                             </div>
                         </div>

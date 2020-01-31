@@ -231,8 +231,10 @@ class Admin_view extends CI_Controller {
         for($i = 0 ; $i < 12 ; $i++){
              array_push($jml, $tabelA[$i] + $tabelB[$i] + $tabelC[$i] + $tabelD[$i] + $tabelE[$i] + $tabelF[$i] + $tabelG[$i] + $tabelH[$i]+$tabelI[$i]);
         }
+                $data['Outdoor'] = 'Pekerjaan yang aktifitasnya dilakukan diluar atau di lapanagn terbuka. Untuk laki-laki: petani, juru ukur, nelayan, supir. Untuk wanita: ahli pertamanan, peternak, petani bunga dan tukang kebun';
+                $data['Mechanical'] = 'Pekerjaan yang berhubungan dengan mesin, alat-alat dan daya mekanik.Untuk laki-laki: insinyur sipil, montir, pembuat arloji, tukang las. Untuk wanita: ahli kacamata, petugas mesin sulam, ahli reparasi permata, ahli reparasi jam.';
 
-        $data['jml'] = $jml;
+                $data['jml'] = $jml;
        // die(json_encode($data));
                 $data['judul'] = "Admin | Hasil";
                 $data['back'] = "Admin_view/data_analisa";

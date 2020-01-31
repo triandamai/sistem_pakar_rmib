@@ -41,6 +41,7 @@ class User_event extends CI_Controller {
 						"username" => $cek->username,
 						"email" => $cek->email,
 						"status" => $cek->status,
+						"jk" => $cek->jk,
 						"login" => true
 					);
 					if($cek->status == "TIDAK AKTIF"){
@@ -92,6 +93,7 @@ class User_event extends CI_Controller {
 			$username = $this->input->post('username');
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
+			$jk = $this->input->post('jk');
 			$cpassword = $this->input->post('password-confirm');
 
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
@@ -131,6 +133,7 @@ class User_event extends CI_Controller {
 						"username" => $username,
 						"email"    => $email,
 						"password" => $this->bcrypt->hash_password($password),
+						"jk" => $jk,
 						"status"	=> "TIDAK AKTIF",
 						"created_at" => date("Y-m-d H:i:s")
 					);
@@ -174,10 +177,7 @@ class User_event extends CI_Controller {
 
 	public function simpan_analisa()
 	{
-		$tabel = $this->input->post('tabel');
-		$nama = $this->input->post('nama');
-		$jenis_kelamin = $this->input->post('jk');
-		$ttl = $this->input->post('ttl');
+		$tabel = $this->input->get('tabel');
 		$id_user = $this->session->userdata['user_data']['id'];
 
 		if($tabel == null || $tabel == "" || empty($tabel)){
@@ -195,9 +195,8 @@ class User_event extends CI_Controller {
 					$data_session_analisa = array(
 						"id" => "ANALISA_".$kode,
 						"id_user" => $id_user,
-						"TTL" => $ttl,
-						"nama" => $nama,
-						"jenis_kelamin" => $jenis_kelamin,
+						"nama" => $this->session->userdata['user_data']['nama'],
+						"jenis_kelamin" => $this->session->userdata['user_data']['jk'],
 						"created_at" => date("Y-m-d H:i:s"),
 						"updated_at" => date("Y-m-d H:i:s")
 					);

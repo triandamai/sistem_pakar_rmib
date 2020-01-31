@@ -14,6 +14,7 @@ class User_view extends CI_Controller {
 	public function index()
 	{
         if ($this->isLoggedIn()) {
+          // die(json_encode($this->session->userdata['user_data']));
             $data['judul'] = "User | Home";
             $data['nama_section'] = "Home";
             $data['title_section'] = "Selamat Datang!";

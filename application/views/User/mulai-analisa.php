@@ -20,7 +20,7 @@
                       Isi form dibawah dengan mengisi angka 1 sampai 12 jumlah kesuluruhan 78.
                     </p>
                     <div class="card-body">
-                      <form action="<?= base_url()?>index.php/User_event/simpan_analisa"  method="POST" id="basicform" data-parsley-validate="">
+                      <form action="<?= base_url()?>index.php/User_event/simpan_analisa?tabel=<?= $_GET['tabel']; ?>"  method="POST" id="basicform" data-parsley-validate="">
                         <?php $no=1; 
                         foreach($sub_indikator as $si){
                         ?>

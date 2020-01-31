@@ -22,6 +22,13 @@
                 <div class="form-group">
                     <input class="form-control form-control-lg" required="" type="password" name="password-confirm"placeholder="Ulang Password">
                 </div>
+                <div class="form-group">
+                                            <label for="JKs">Jenis Kelamin</label>
+                                            <select class="form-control" name="jk">
+                                              <option value="L">LAKI-LAKI</option>
+                                              <option value="P">PEREMPUAN</option>
+                                            </select>
+                                        </div>
                 <div class="form-group pt-2">
                     <input class="btn btn-block btn-primary" type="submit" name="simpan" type="submit" value="MENDAFTAR">
                   

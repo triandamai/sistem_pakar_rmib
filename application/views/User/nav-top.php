@@ -65,7 +65,7 @@
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= base_url()?>index.php/User_view/isi_data_analisa">Analisa Sekarang</a>
+                                            <a class="nav-link" href="<?= base_url()?>index.php/User_event/simpan_analisa?tabel=">Mulai Analisa</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= base_url()?>index.php/User_view/data_history">Data Analisa</a>
