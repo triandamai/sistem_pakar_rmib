@@ -25,7 +25,7 @@
                 <div class="form-group">
                                             <label for="JKs">Jenis Kelamin</label>
                                             <select class="form-control" name="jk">
-                                              <option value="L">LAKI-LAKI</option>
+                                              <option value="L" selected>LAKI-LAKI</option>
                                               <option value="P">PEREMPUAN</option>
                                             </select>
                                         </div>

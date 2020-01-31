@@ -98,7 +98,7 @@ class User_event extends CI_Controller {
 
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 			if($this->form_validation->run() == FALSE){
-				$$this->session->set_flashdata(
+				$this->session->set_flashdata(
 					'pesan',
 					'<div class="alert alert-warning" role="alert">
 						Password minimal 8 karakter!
