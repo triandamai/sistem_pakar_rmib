@@ -83,6 +83,10 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= base_url()?>index.php/Admin_event/logout" ><i class="fas fa-f fa-folder"></i>Logout</a>
+                               
+                            </li>
                         </ul>
                     </div>
                 </nav>

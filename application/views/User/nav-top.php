@@ -65,7 +65,7 @@
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= base_url()?>index.php/User_event/simpan_analisa?tabel=">Mulai Analisa</a>
+                                            <a class="nav-link" href="<?= base_url()?>index.php/User_view/isi_data_analisa">Mulai Analisa</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= base_url()?>index.php/User_view/data_history">Data Analisa</a>
@@ -74,11 +74,11 @@
                                     </ul>
                                 </div>
                             </li>
-             
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-f fa-folder"></i>Profil</a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= base_url()?>index.php/User_event/logout" ><i class="fas fa-f fa-folder"></i>Logout</a>
                                
-                            </li> -->
+                            </li>
                         </ul>
                     </div>
                 </nav>
