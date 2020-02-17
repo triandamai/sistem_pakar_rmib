@@ -159,7 +159,7 @@ class Admin_view extends CI_Controller {
         
         $jml_ind = $indikator->num_rows();
 
-        if($dataA->num_rows() == $jml_ind && 
+        if($dataA->num_rows() == $jml_ind &&
             $dataB->num_rows() == $jml_ind && 
             $dataC->num_rows() == $jml_ind && 
             $dataD->num_rows() == $jml_ind && 

@@ -92,6 +92,7 @@ class User_event extends CI_Controller {
 			$nama = $this->input->post('nama');
 			$username = $this->input->post('username');
 			$email = $this->input->post('email');
+			$kelas = $this->input->post('kelas');
 			$password = $this->input->post('password');
 			$jk = $this->input->post('jk');
 			$cpassword = $this->input->post('password-confirm');
@@ -110,7 +111,7 @@ class User_event extends CI_Controller {
 			$cek = $this->DataModel->get_whereArr("user", "username = '" . $username . "' or email = '" . $email . "'")->row();
 			if ($cek != null) {
 				if ($cek->username == $username) {
-					$$this->session->set_flashdata(
+					$this->session->set_flashdata(
 						'pesan',
 						'<div class="alert alert-danger" role="alert">
 							Username tidak tersedia!
@@ -133,6 +134,7 @@ class User_event extends CI_Controller {
 						"username" => $username,
 						"email"    => $email,
 						"password" => $this->bcrypt->hash_password($password),
+						"kelas" => $kelas,
 						"jk" => $jk,
 						"status"	=> "TIDAK AKTIF",
 						"created_at" => date("Y-m-d H:i:s")

@@ -163,10 +163,10 @@
                                     <p class="mb-0"><?= $indikator[$index]->keterangan;?></p>
                                     <br>
                                     <p class="text-dark"><?= $indikator[$index1]->nama;?></p>
-                                    <p class="mb-0"><?= $indikator[$index]->keterangan;?></p>
+                                    <p class="mb-0"><?= $indikator[$index1]->keterangan;?></p>
                                     <br>
                                     <p class="text-dark"><?= $indikator[$index2]->nama;?></p>
-                                    <p class="mb-0"><?= $indikator[$index]->keterangan;?></p>
+                                    <p class="mb-0"><?= $indikator[$index2]->keterangan;?></p>
                                 </div>
                                
                                 <div class="card-footer bg-white">
