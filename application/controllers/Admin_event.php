@@ -49,6 +49,7 @@ class Admin_event extends CI_Controller {
 							"id" => $cek->id,
 							"username" => $cek->username,
 							"email" => $cek->email,
+							"level" => $cek->LEVEL,
 							"status" => true,
 						);
 						$this->session->set_userdata('admin_data', $user);

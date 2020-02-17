@@ -68,7 +68,7 @@
                                             <a class="nav-link" href="<?= base_url()?>index.php/User_view/isi_data_analisa">Mulai Analisa</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= base_url()?>index.php/User_view/data_history">Data Analisa</a>
+                                            <a class="nav-link" href="<?= base_url()?>index.php/User_view/data_history">History <?= $this->session->userdata['user_data']['username']?></a>
                                         </li>
                                         
                                     </ul>

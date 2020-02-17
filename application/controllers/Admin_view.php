@@ -71,6 +71,22 @@ class Admin_view extends CI_Controller {
         }
 		
     }
+    public function data_admin()
+	{
+        if($this->isLoggedIn()){
+            $data['judul'] = "Admin | Data Admin";
+            $data['user'] = $this->DataModel->getData("admin")->result_array();
+          // die(json_encode($data));
+            $this->load->view('header', $data);
+            $this->load->view('Admin/nav-top', $data);
+                $this->load->view('Admin/data-admin', $data);
+            $this->load->view('Admin/nav-bottom', $data);
+            $this->load->view('footer', $data);
+        }else{
+            redirect('Admin_view/login');
+        }
+		
+    }
     public function data_analisa()
 	{
         if($this->isLoggedIn()){

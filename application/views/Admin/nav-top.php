@@ -80,6 +80,13 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= base_url()?>index.php/Admin_view/data_user">Data User</a>
                                         </li>
+                                        <?php if($this->session->userdata['admin_data']['level'] == "SUPER"){
+                                            ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= base_url()?>index.php/Admin_view/data_admin">Data Admin</a>
+                                        </li>
+                                            <?php }?>
+                                        
                                     </ul>
                                 </div>
                             </li>

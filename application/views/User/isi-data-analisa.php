@@ -24,10 +24,15 @@
                                               <option value="P">PEREMPUAN</option>
                                             </select>
                                         </div> -->
+                                        <span>
+                                        1. Berdoa sebelum memulai tes<br>
+                                        2. Isilah setiap form dengan mengisi angka 1 - 12 <br>
+                                        3. Setiap form tidak boleh memiliki angka yang sama
+                                        </span>
                                         <div class="row">      
                                             <div class="col-sm-6 pl-0">
                                                 <p class="text-right">
-                                                    <a type="submit" href="<?= base_url()?>index.php/User_event/simpan_analisa?tabel=" class="btn btn-space btn-primary">Simpan</a>
+                                                    <a type="submit" href="<?= base_url()?>index.php/User_event/simpan_analisa?tabel=" class="btn btn-space btn-primary">Mulai Tes</a>
                                                 </p>
                                             </div>
                                         </div>
