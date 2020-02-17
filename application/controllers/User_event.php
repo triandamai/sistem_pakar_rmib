@@ -147,7 +147,7 @@ class User_event extends CI_Controller {
 						$this->session->set_flashdata(
 							'pesan',
 							'<div class="alert alert-success" role="alert">
-								Berhasil silahkan login
+								Berhasil membuat akun, akun anda masih belum aktif 
 							</div>'
 						);
 						redirect('User_view/login');

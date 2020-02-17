@@ -17,7 +17,7 @@
                     
                     ?>).</h5>
                     <p class="card-header">
-                      Isi form dibawah dengan mengisi angka 1 sampai 12 jumlah kesuluruhan 78.
+                      Isi form dibawah dengan mengisi angka 1 sampai 12.
                     </p>
                     <div class="card-body">
                       <form action="<?= base_url()?>index.php/User_event/simpan_analisa?tabel=<?= $_GET['tabel']; ?>"  method="POST" id="basicform" data-parsley-validate="">
