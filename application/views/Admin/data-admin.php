@@ -47,6 +47,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama</th>
+                                                <th>Username</th>
                                                 <th>Email</th>
                                                 <th>Level</th>
                                                 <th>Updated</th>
@@ -60,6 +61,7 @@
                                             <tr>
                                                 <td><?= $no;?></td>
                                                 <td><?= $u['nama'];?></td>
+                                                <td><?= $u['username'];?></td>
                                                 <td><?= $u['email'];?></td>
                                                 <td><?= $u['LEVEL'];?></td>
                                                 <td><?= $u['updated_at'];?></td>
@@ -81,6 +83,7 @@
                                                         data-id="<?= $u['id'];?>"
                                                         data-nama="<?= $u['nama'];?>"
                                                         data-email="<?= $u['email'];?>"
+                                                        data-username="<?= $u['username'];?>"
                                                         data-password="<?= $u['password'];?>"
                                                         data-level="<?= $u['LEVEL'];?>"
                                                         data-target="#ubahAdmin"
@@ -117,7 +120,7 @@
             </div>
 
 
-<!-- modal tambah sub indikator -->
+<!-- modal tambah admin -->
 <div class="modal fade" id="tambahAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -127,30 +130,30 @@
                       <span aria-hidden="true">&times;</span>
                   </a>
               </div>
-              <form action="<?= base_url()?>index.php/Admin_event/ubah_sub_indikator" method="POST">
+              <form action="<?= base_url()?>index.php/Admin_event/tambah_admin" method="POST">
               <div class="modal-body">
                 <div class="card-body">
                 <div class="form-group">
                         <label >Nama</label>
                         <input type="hidden" name="indikator">
-                        <input class="form-control form-control-lg" type="text" name="nama" required="" placeholder="Indikator" autocomplete="off">
+                        <input class="form-control form-control-lg" type="text" name="nama" required placeholder="Indikator" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label >Username</label>
                         <input type="hidden" name="indikator">
-                        <input class="form-control form-control-lg"  type="text" name="username" required="" placeholder="Indikator" autocomplete="off">
+                        <input class="form-control form-control-lg"  type="text" name="username" required placeholder="Indikator" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label >Email</label>
-                        <input class="form-control form-control-lg" type="email" name="email" required="" placeholder="Nama" autocomplete="off">
+                        <input class="form-control form-control-lg" type="email" name="email" required placeholder="Nama" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label >Password</label>
-                        <input class="form-control form-control-lg" type="password" name="password" required="" placeholder="Nama" autocomplete="off">
+                        <input class="form-control form-control-lg" type="password" name="password" required placeholder="Nama" autocomplete="off">
                     </div>
                     <div class="form-group">
                     <label for="JKs">Level</label>
-                    <select name="jenis_kelamin" class="form-control" >
+                    <select required name="level" class="form-control" >
                         <option value="ADMIN">ADMIN</option>
                         <option value="SUPER">SUPER</option>
                     </select>
@@ -167,7 +170,7 @@
 </div>
 
 
-<!-- modal ubah sub indikator -->
+<!-- modal ubah admin -->
 <div class="modal fade" id="ubahAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -177,13 +180,13 @@
                       <span aria-hidden="true">&times;</span>
                   </a>
               </div>
-              <form action="<?= base_url()?>index.php/Admin_event/ubah_sub_indikator" method="POST">
+              <form action="<?= base_url()?>index.php/Admin_event/ubah_admin" method="POST">
               <div class="modal-body">
                 <div class="card-body">
                     
                     <div class="form-group">
                         <label >Nama</label>
-                        <input type="hidden" name="id_admin">
+                        <input type="hidden" name="id">
                         <input class="form-control form-control-lg"  type="text" name="nama" required="" placeholder="Indikator" autocomplete="off">
                     </div>
                     <div class="form-group">
@@ -200,7 +203,7 @@
                     </div>
                     <div class="form-group">
                     <label for="JKs">Level</label>
-                    <select name="jenis_kelamin" class="form-control" >
+                    <select name="level" class="form-control" >
                         <option value="ADMIN">ADMIN</option>
                         <option value="SUPER">SUPER</option>
                     </select>
@@ -230,8 +233,8 @@
                 <p>Semua data tidak bisa dikembalikan alias hapus permanen!</p>
             </div>
             <div class="modal-footer">
-            <form id="formHapus" action="" method="POST">
-                <a class="btn btn-info" data-dismiss="modal">Batal</a>
+            <form id="formHapus" action="<?= base_url()?>index.php/Admin_event/hapus_admin" method="POST">
+                <a href="#" class="btn btn-info" data-dismiss="modal">Batal</a>
                 <input type="hidden" name="id" >
                 <input type="submit" class="btn btn-danger" value="Oke,Hapus">
             </form>
@@ -244,17 +247,19 @@
 <script type="text/javascript">
 $(document).on("click", "#ubahAdminId", function() {
         console.log("ubah");
-    //   $('input[name="id"]').val($(this).data('id'));
-    //   $('input[name="nama"]').val($(this).data('nama'));
-    //   $('select[name="urut"]').val($(this).data('urut'));
-    //  $('textarea[name="ket"]').val($(this).data('ket'));
+      $('input[name="id"]').val($(this).data('id'));
+      $('input[name="nama"]').val($(this).data('nama'));
+      $('input[name="email"]').val($(this).data('email'));
+      $('input[name="username"]').val($(this).data('username'));
+      $('input[name="password"]').val($(this).data('password'));
+      $('select[name="level"]').val($(this).data('level'));
      
 });
 $(document).on("click", "#hapusAdminId", function() {
         console.log("hehe");
-        // $('#judulModal').text("Yakin Menghapus Admin "+$(this).data('nama')+"?");
-        // $('#formHapus').attr('action','<?= base_url()?>index.php/Admin_event/hapus_sub_indikator');
-        // $('input[name="id"]').val($(this).data('id'));
+        $('#judulModal').text("Yakin Menghapus Admin "+$(this).data('nama')+"?");
+        $('#formHapus').attr('action','<?= base_url()?>index.php/Admin_event/hapus_admin');
+        $('input[name="id"]').val($(this).data('id'));
 
 });
 

@@ -332,7 +332,100 @@ class Admin_event extends CI_Controller {
 			}
 		
 		
-    }
+	}
+	function tambah_admin()
+	{
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$level = $this->input->post('level');
+		if($cek->num_rows() <= 1){
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-danger mr-auto">Username sudah terpakai!</div>'
+			);
+			redirect('admin_view/data_admin');
+		}else{
+		$data = array(
+			"nama" => $nama,
+			"email" => $email,
+			"username" => $username,
+			"password" => $password,
+			"LEVEL" => $level,
+			"created_at" => date("Y-m-d H:i:s"),
+			"updated_at" =>date("Y-m-d H:i:s")
+		);
+		$simpan = $this->DataModel->insert('admin',$data);
+		if($simpan){
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-success mr-auto">Berhasil</div>'
+			);
+			redirect('admin_view/data_admin');
+		}else{
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-danger mr-auto">Gagal</div>'
+			);
+			redirect('admin_view/data_admin');
+		}
+	}
+	}
+	function ubah_admin()
+	{
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$level = $this->input->post('level');
+		$cek = $this->DataModel->getWhere('username',$username);
+		$cek = $this->DataModel->getData();
+		
+			$data = array(
+				"nama" => $nama,
+				"email" => $email,
+				"username" => $username,
+				"password" => $password,
+				"LEVEL" => $level,
+				"updated_at" =>date("Y-m-d H:i:s")
+			);
+			$simpan = $this->DataModel->update('id',$id,'admin',$data);
+			if($simpan){
+				$this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-success mr-auto">Berhasil</div>'
+				);
+				redirect('admin_view/data_admin');
+			}else{
+				$this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-danger mr-auto">Gagal</div>'
+				);
+				redirect('admin_view/data_admin');
+			}
+		
+		
+	}
+	function hapus_admin()
+	{
+		$id = $this->input->post('id');
+		$simpan = $this->DataModel->delete('id',$id,'admin');
+		if($simpan){
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-success mr-auto">Berhasil</div>'
+			);
+			redirect('admin_view/data_admin');
+		}else{
+			$this->session->set_flashdata(
+				'pesan',
+				'<div class="alert alert-danger mr-auto">Gagal</div>'
+			);
+			redirect('admin_view/data_admin');
+		}
+	}
 	function logout()
 	{
 		$sess_array = array(
