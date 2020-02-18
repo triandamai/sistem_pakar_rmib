@@ -65,8 +65,14 @@
                                                 <td><?= $u['email'];?></td>
                                                 <td><?= $u['LEVEL'];?></td>
                                                 <td><?= $u['updated_at'];?></td>
-                                                <td>                                                  
-                                                    <a class="btn btn-danger btn-sm"
+                                                <td> 
+                                                    <?php if($u['LEVEL'] == "SUPER"){
+                                                        ?>
+                                                        <p>Super Admin</p>
+                                                        <?php
+                                                    }else{
+                                                        ?>
+                                                        <a class="btn btn-danger btn-sm"
                                                         href="#"  
                                                         id="hapusAdminId" 
                                                         class="btn btn-primary btn-sm" 
@@ -88,9 +94,8 @@
                                                         data-level="<?= $u['LEVEL'];?>"
                                                         data-target="#ubahAdmin"
                                                      >UBAH</a>
-                                                 
-
-                                                  
+                                                        <?php
+                                                    }?>                                                 
                                                 </td>
                                             </tr>
                                           <?php 
@@ -136,20 +141,20 @@
                 <div class="form-group">
                         <label >Nama</label>
                         <input type="hidden" name="indikator">
-                        <input class="form-control form-control-lg" type="text" name="nama" required placeholder="Indikator" autocomplete="off">
+                        <input class="form-control form-control-lg" type="text" name="nama" required placeholder="Nama" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label >Username</label>
                         <input type="hidden" name="indikator">
-                        <input class="form-control form-control-lg"  type="text" name="username" required placeholder="Indikator" autocomplete="off">
+                        <input class="form-control form-control-lg"  type="text" name="username" required placeholder="Username" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label >Email</label>
-                        <input class="form-control form-control-lg" type="email" name="email" required placeholder="Nama" autocomplete="off">
+                        <input class="form-control form-control-lg" type="email" name="email" required placeholder="Email" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label >Password</label>
-                        <input class="form-control form-control-lg" type="password" name="password" required placeholder="Nama" autocomplete="off">
+                        <input class="form-control form-control-lg" type="password" name="password" required placeholder="Password" autocomplete="off">
                     </div>
                     <div class="form-group">
                     <label for="JKs">Level</label>

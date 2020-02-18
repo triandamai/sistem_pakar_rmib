@@ -41,9 +41,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Kode</th>
-                                                <th>Nama</th>
                                                 <th>Tanggal</th>
-                                                <!-- <th>Tempat/Tgl Lahir</th> -->
                                                 <th>Jenis Kelamin</th>
                                                 <th>Action</th>
                                             </tr>
@@ -55,9 +53,7 @@
                                                 <tr>
                                                 <td><?= $no;?></td>
                                                 <td><?= $h->id;?></td>
-                                                <td><?= $h->nama;?></td>
                                                 <td><?= $h->created_at;?></td>
-                                                <!-- <td><?= $h->TTL;?></td> -->
                                                 <td><?= $h->jenis_kelamin;?></td>
                                                 <td>
                                                 <?php if($h->hasil == "SELESAI"){

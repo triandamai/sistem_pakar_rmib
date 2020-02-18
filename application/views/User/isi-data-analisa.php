@@ -26,7 +26,7 @@
                                         </div> -->
                                         <span>
                                         1. Berdoa sebelum memulai tes<br>
-                                        2. Isilah setiap form dengan mengisi angka 1 - 12 <br>
+                                        2. Urutkanlah angka dari 1-12 dari pekerjaan yang paling di sukai sampai yg tidak disukai. 1 untuk pekerjaan yg di sukai sampai 12 pekerjaan yg tdk disukai <br>
                                         3. Setiap form tidak boleh memiliki angka yang sama
                                         </span>
                                         <div class="row">      

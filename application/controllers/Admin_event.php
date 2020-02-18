@@ -340,7 +340,11 @@ class Admin_event extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$level = $this->input->post('level');
-		if($cek->num_rows() <= 1){
+
+		$cek = $this->DataModel->getWhere('username',$username);
+		$cek = $this->DataModel->getData('admin');
+		//die(json_encode($cek->num_rows()));
+		if($cek->num_rows() < 0){
 			$this->session->set_flashdata(
 				'pesan',
 				'<div class="alert alert-danger mr-auto">Username sudah terpakai!</div>'
@@ -380,8 +384,7 @@ class Admin_event extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$level = $this->input->post('level');
-		$cek = $this->DataModel->getWhere('username',$username);
-		$cek = $this->DataModel->getData();
+
 		
 			$data = array(
 				"nama" => $nama,

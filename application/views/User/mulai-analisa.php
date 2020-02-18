@@ -1,4 +1,4 @@
-          <?php// die(json_encode($sub_indikator));?>
+     
           <div class="container-fluid  dashboard-content">
             <div class="row">
               <div class="col-md-3 grid-margin"></div>
@@ -27,11 +27,28 @@
                         <div class="form-group row">
                            <label for="inputUserName" class="col-9 col-lg-9 col-form-label text-left"><?= $si->nama;?></label>
                            <div class="col-3 col-lg-3">
-                           <input type="hidden" name="tabel" value="<?= $_GET['tabel'];?>">
-                           <input id="inputUserName" type="hidden" name="id_sub[]" value="<?= $si->id;?>">
-                            <input id="inputUserName" type="number" name="val[]" data-parsley-trigger="change" required placeholder="max : 12" autocomplete="off" class="form-control">
+                            <input type="hidden" name="tabel" value="<?= $_GET['tabel'];?>">
+                            <input id="inputUserName" type="hidden" name="id_sub[]" value="<?= $si->id;?>">
+                            <input id="i<?= $no;?>"  onkeydown="change(this.value,<?= $no;?>);" onkeyup="change(this.value,<?= $no;?>);" type="number" name="val[]" data-parsley-trigger="change" required placeholder="max : 12" autocomplete="off" class="form-control">
+                            <p style="color:red;margin-left=12px;" id="e<?= $no;?>">maksimal angka 12 dan minimal 11</p>
                            </div>
                         </div>
+                        <script type="text/javascript">
+                          var error = document.getElementById('e<?= $no;?>').style.display = 'none';
+                          function change(e,no){
+                            var error = document.getElementById('e'+no);
+                            
+                            console.log(e);
+                            if(e > 12){
+                             error.style.display = 'block';
+                            }else if(e < 1){
+                              error.style.display = 'block';
+                            }else{
+                              error.style.display = 'none';
+                            }
+
+                          }
+                        </script>
                         <?php
                           $no++;
                         }?>
