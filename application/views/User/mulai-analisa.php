@@ -30,7 +30,7 @@
                             <input type="hidden" name="tabel" value="<?= $_GET['tabel'];?>">
                             <input id="inputUserName" type="hidden" name="id_sub[]" value="<?= $si->id;?>">
                             <input id="i<?= $no;?>"  onkeydown="change(this.value,<?= $no;?>);" onkeyup="change(this.value,<?= $no;?>);" type="number" name="val[]" data-parsley-trigger="change" required placeholder="max : 12" autocomplete="off" class="form-control">
-                            <p style="color:red;margin-left=12px;" id="e<?= $no;?>">maksimal angka 12 dan minimal 11</p>
+                            <p style="color:red;margin-left=12px;" id="e<?= $no;?>">maksimal angka 12 dan minimal 1</p>
                            </div>
                         </div>
                         <script type="text/javascript">
